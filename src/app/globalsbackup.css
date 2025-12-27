@@ -1,0 +1,328 @@
+/* testing */
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.neon-text {
+  text-shadow: 0 0 1px rgba(74, 222, 128, 0.8);
+}
+
+.holographic-effect {
+  background: linear-gradient(135deg,
+      rgba(74, 222, 128, 0.1) 0%,
+      rgba(74, 222, 128, 0) 20%,
+      rgba(74, 222, 128, 0) 80%,
+      rgba(74, 222, 128, 0.1) 100%);
+}
+
+.bg-color {
+  background-color: #0C7075;
+}
+
+.color {
+  color: #072E33;
+}
+
+/* Dashboard Sidebar Responsive */
+@media (max-width: 1024px) {
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .dashboard-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .dashboard-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Smooth transitions */
+.sidebar-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 2px;
+}
+
+/* Enhanced Dashboard Styles */
+.dashboard-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-sidebar {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* Smooth scrollbar for sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Professional shadows */
+.professional-shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.professional-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ===============================
+   Avaamo Dark Theme Overrides
+   (Navbar / Footer style)
+   =============================== */
+
+nav {
+  background: rgba(10, 10, 12, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Desktop nav links */
+nav a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* Active nav item */
+nav a.color {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Underline animation */
+.bg-color-400 {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Mobile menu panel */
+.fixed.bg-gray-900 {
+  background: #0b0c0f !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile backdrop */
+.bg-black.bg-opacity-75 {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Buttons (Login / Logout) */
+button {
+  border-radius: 6px;
+}
+
+button.bg-color,
+button.bg-green-400\/10 {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+button.bg-color:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Logout button */
+button.bg-red-600 {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #ff6b6b !important;
+  border: 1px solid rgba(255, 107, 107, 0.3) !important;
+}
+
+button.bg-red-600:hover {
+  background: rgba(255, 107, 107, 0.15) !important;
+}
+
+/* Menu headings */
+h2 {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* User info text */
+.text-green-400 {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.sleek-navbar {
+  background: #000000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-link-active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Mobile menu button */
+.nav-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-menu-button:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Mobile menu panel */
+.mobile-menu-panel {
+  background: rgba(9, 9, 11, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile navigation links */
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-nav-link-active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile logout button */
+.mobile-logout-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(239, 68, 68, 0.9);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.mobile-logout-button:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Button overrides for navbar */
+nav button.bg-color {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+nav button.bg-color:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Ensure proper spacing */
+nav .max-w-7xl {
+  max-width: 80rem;
+}
+
+/* Remove any unwanted text transforms */
+nav a,
+nav button {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Smooth scrolling when navbar is fixed */
+html {
+  scroll-padding-top: 4rem;
+}
+
