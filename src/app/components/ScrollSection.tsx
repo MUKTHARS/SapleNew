@@ -44,7 +44,7 @@ const scrollSections = [
     ctaText: 'Explore Conversation Intelligence',
     icon: <BarChart className="w-5 h-5" />,
     color: '#10B981',
-    src: '/images/Conversational Intelligence_v2.png',
+    src: '/images/Conversational Intelligence_v1.png',
     features: [
       'Sentiment analysis',
       'Trend identification',
