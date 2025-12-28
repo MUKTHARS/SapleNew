@@ -29,7 +29,7 @@ const scrollSections = [
     ctaText: 'Explore Agent Assist',
     icon: <MessageSquare className="w-5 h-5" />,
     color: '#8B5CF6',
-    src: '/images/bf3.avif',
+    src: '/images/Agent Assist_v2.png',
     features: [
       'Real-time agent coaching',
       'Automated note taking',
@@ -44,7 +44,7 @@ const scrollSections = [
     ctaText: 'Explore Conversation Intelligence',
     icon: <BarChart className="w-5 h-5" />,
     color: '#10B981',
-    src: '/images/bf4.avif',
+    src: '/images/Conversation Intelligence_v2.png',
     features: [
       'Sentiment analysis',
       'Trend identification',
