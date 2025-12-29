@@ -1,4 +1,4 @@
-// src/app/page.tsx - UPDATED
+// Update src/app/page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -7,11 +7,12 @@ import { ScrollSection } from './components/ScrollSection';
 import { HeroSection } from './components/HeroSection';
 import { FeaturesSection } from './components/FeaturesSection';
 import { EnterpriseSection } from './components/EnterpriseSection';
-// import { UseCasesSection } from './components/UseCasesSection';
 import { StatsSection } from './components/StatsSection';
 import { CtaSection } from './components/CtaSection';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { KnowledgeFirstSection } from '@/app/components/KnowledgeFirstSection';
+import { EnterpriseIntegrationsSection } from '@/app/components/EnterpriseIntegrationsSection';
+import { MultipleUseCase } from '@/app/components/MultipleUseCase';
 
 export default function Home() {
   const [isChecking, setIsChecking] = useState(true);
@@ -21,7 +22,6 @@ export default function Home() {
     const checkAuth = async () => {
       const token = sessionStorage.getItem('access_token');
       if (token) {
-        // Check if user has a workspace
         try {
           const response = await fetch(
             `${process.env.NEXT_PUBLIC_API_URL}/workspace/current/`,
@@ -33,14 +33,10 @@ export default function Home() {
           );
 
           if (response.ok) {
-            // User has workspace, redirect to dashboard
             router.push('/dashboard');
           } else if (response.status === 404) {
-            // User doesn't have workspace, stay on home page
-            // The UserSection will show the "Create Workspace" button
             setIsChecking(false);
           } else {
-            // Other error, stay on home page
             setIsChecking(false);
           }
         } catch (error) {
@@ -55,17 +51,13 @@ export default function Home() {
     checkAuth();
   }, [router]);
 
-  // Inject chatbot script after component mounts
   useEffect(() => {
     if (!isChecking) {
-      // Create and inject the chatbot script
       const injectChatbotScript = () => {
-        // Check if script already exists
         if (document.getElementById('saple-ai-chatbot-script')) {
           return;
         }
 
-        // Create the script element
         const script = document.createElement('script');
         script.id = 'saple-ai-chatbot-script';
         script.innerHTML = `
@@ -81,17 +73,14 @@ export default function Home() {
             i.style.border = "none";
             i.style.boxShadow = "0 0 20px rgba(14, 165, 233, 0.5)";
             
-            // Set initial dimensions
             i.width = w >= 600 ? "400" : "350";
             i.height = "600";
             
-            // Function to append iframe
             function appendIframe() {
               if (document.body) {
                 document.body.appendChild(i);
                 console.log('SAPLE.AI Chatbot iframe added to page');
                 
-                // Listen for resize messages
                 window.addEventListener("message", function(e) {
                   if (e.data && e.data.width && e.data.height) {
                     i.width = w >= 600 ? e.data.width : '400px';
@@ -105,30 +94,24 @@ export default function Home() {
               return false;
             }
             
-            // Try to append immediately
             if (!appendIframe()) {
-              // If body not ready, try again
               const interval = setInterval(() => {
                 if (appendIframe()) {
                   clearInterval(interval);
                 }
               }, 100);
               
-              // Give up after 5 seconds
               setTimeout(() => clearInterval(interval), 5000);
             }
           })();
         `;
         
-        // Append the script to the document
         document.body.appendChild(script);
         
-        // Cleanup function
         return () => {
           if (document.body.contains(script)) {
             document.body.removeChild(script);
           }
-          // Also remove the iframe
           const iframe = document.querySelector('iframe[src*="bot.saple.ai"]');
           if (iframe && document.body.contains(iframe)) {
             document.body.removeChild(iframe);
@@ -136,11 +119,10 @@ export default function Home() {
         };
       };
 
-      // Run the injection
       const cleanup = injectChatbotScript();
       return cleanup;
     }
-  }, [isChecking]); // Run when authentication check completes
+  }, [isChecking]);
 
   if (isChecking) {
     return (
@@ -160,17 +142,17 @@ export default function Home() {
         <FeaturesSection />
         <ScrollSection /> 
         <EnterpriseSection />
+       
+        <EnterpriseIntegrationsSection />
+        <MultipleUseCase />
         <KnowledgeFirstSection />
-        {/* <UseCasesSection /> */}
         <StatsSection />
         <CtaSection />
       </ErrorBoundary>
       
-      {/* Direct script injection as fallback */}
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            // Fallback direct injection
             if (typeof window !== 'undefined') {
               setTimeout(function() {
                 if (!document.querySelector('iframe[src*="bot.saple.ai"]')) {

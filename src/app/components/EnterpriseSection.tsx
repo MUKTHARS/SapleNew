@@ -37,13 +37,14 @@ export function EnterpriseSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Left content - Glass cards */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="flex flex-col justify-center"
           >
             <div className="space-y-6">
               {[
@@ -122,10 +123,11 @@ export function EnterpriseSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative h-full"
           >
-            {/* Glass container for slideshow */}
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 via-white/70 to-white/90 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(14,165,233,0.1)] p-3">
+            {/* Glass container for slideshow - Removed padding to make inner container fit perfectly */}
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 via-white/70 to-white/90 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(14,165,233,0.1)] h-full min-h-[500px]"> {/* Removed p-3 */}
+              {/* Removed wrapper div since Slideshow will handle full height */}
               <Slideshow />
             </div>
           </motion.div>

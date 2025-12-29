@@ -61,19 +61,20 @@ export function ScrollSection() {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean[]>([]);
 
   const handleSectionClick = useCallback((index: number) => {
-    if (!scrollContainerRef.current) return;
-    
-    setIsScrolling(true);
-    const sectionHeight = scrollContainerRef.current.clientHeight;
-    const targetScroll = index * sectionHeight;
-    
-    scrollContainerRef.current.scrollTo({
-      top: targetScroll,
-      behavior: 'smooth'
-    });
+  if (!scrollContainerRef.current) return;
+  
+  setIsScrolling(true);
+  setActiveSection(index); 
+  const sectionHeight = scrollContainerRef.current.clientHeight;
+  const targetScroll = index * sectionHeight;
+  
+  scrollContainerRef.current.scrollTo({
+    top: targetScroll,
+    behavior: 'smooth'
+  });
 
-    setTimeout(() => setIsScrolling(false), 500);
-  }, []);
+  setTimeout(() => setIsScrolling(false), 500);
+}, []);
 
   const handleScroll = useCallback(() => {
     if (!scrollContainerRef.current || isScrolling) return;
@@ -211,32 +212,33 @@ export function ScrollSection() {
                           </div>
                         </div>
 
-                        {/* Features list - only show for active section */}
-                        {activeSection === index && (
-                          <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: 0.1 }}
-                            className="ml-12"
-                          >
-                            <div className="grid grid-cols-2 gap-1.5 mb-4">
-  {section.features.map((feature, idx) => (
-    <div 
-      key={idx}
-      className="px-2 py-1.5 bg-gray-900/70 backdrop-blur-sm rounded-md border border-gray-700/50"
-    >
-      <span className="text-xs text-gray-300 leading-tight">{feature}</span>
+        {/* Features list - only show for active section */}
+{activeSection === index && (
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3, delay: 0.1 }}
+    className="ml-12"
+  >
+    <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-4">
+      {section.features.map((feature, idx) => (
+        <div 
+          key={idx}
+          className="flex items-center gap-1 text-xs text-gray-400"
+        >
+          <div className="w-1.4 h-1.4 rounded-full bg-gray-600 flex-shrink-0" />
+          <span className="truncate">{feature}</span>
+        </div>
+      ))}
     </div>
-  ))}
-</div>
-                            
-                            {/* CTA Button */}
-                            <button className="ml-2 inline-flex items-center gap-2 bg-gradient-to-r from-gray-900 to-black hover:from-gray-800 hover:to-gray-900 text-white px-5 py-2.5 rounded-lg font-medium transition-all duration-300 border border-gray-700 hover:border-cyan-500/30">
-                              <span>{section.ctaText}</span>
-                              <ArrowRight className="w-4 h-4" />
-                            </button>
-                          </motion.div>
-                        )}
+    
+    {/* CTA Button */}
+    <button className="ml-2 inline-flex items-center gap-2 bg-gradient-to-r from-gray-900 to-black hover:from-gray-800 hover:to-gray-900 text-white px-5 py-2.5 rounded-lg font-medium transition-all duration-300 border border-gray-700 hover:border-cyan-500/30">
+      <span>{section.ctaText}</span>
+      <ArrowRight className="w-4 h-4" />
+    </button>
+  </motion.div>
+)}
                         
                         {/* Image loading indicator */}
                         {activeSection === index && !isImageLoaded[index] && (
