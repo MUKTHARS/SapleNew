@@ -66,7 +66,6 @@ const integrations = [
 export function EnterpriseIntegrationsSection() {
   const [radius, setRadius] = useState(200);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
   
   useEffect(() => {
     const updateRadius = () => {
@@ -84,7 +83,7 @@ export function EnterpriseIntegrationsSection() {
     return () => window.removeEventListener('resize', updateRadius);
   }, []);
 
-  // Spectrum animation effect
+  // Simple decorative patterns on canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -93,228 +92,129 @@ export function EnterpriseIntegrationsSection() {
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth * 2; // Double for retina
-      canvas.height = canvas.offsetHeight * 2;
-      ctx.scale(2, 2);
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
     };
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Create multiple spectrum bars
-    const spectrumBars: Array<{
-      x: number;
-      width: number;
-      height: number;
-      speed: number;
-      frequency: number;
-      hue: number;
-      offset: number;
-    }> = [];
-
-    // Create bars in a radial pattern
-    const barCount = 36;
-    const centerX = canvas.width / 4;
-    const centerY = canvas.height / 4;
-    const maxRadius = Math.min(canvas.width, canvas.height) / 4;
-
-    for (let i = 0; i < barCount; i++) {
-      const angle = (i * 2 * Math.PI) / barCount;
-      const distance = maxRadius * 0.7;
+    // Draw simple geometric patterns
+    const drawPatterns = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      spectrumBars.push({
-        x: centerX + Math.cos(angle) * distance,
-        width: 4,
-        height: 60,
-        speed: 0.5 + Math.random() * 1,
-        frequency: 0.05 + Math.random() * 0.05,
-        hue: 200 + Math.random() * 60,
-        offset: Math.random() * Math.PI * 2
-      });
-    }
-
-    // Create floating particles
-    const particles: Array<{
-      x: number;
-      y: number;
-      size: number;
-      speedX: number;
-      speedY: number;
-      color: string;
-      waveOffset: number;
-    }> = [];
-
-    for (let i = 0; i < 30; i++) {
-      particles.push({
-        x: Math.random() * (canvas.width / 2),
-        y: Math.random() * (canvas.height / 2),
-        size: Math.random() * 2 + 1,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.3,
-        color: `rgba(12, 112, 117, ${Math.random() * 0.4 + 0.2})`,
-        waveOffset: Math.random() * Math.PI * 2
-      });
-    }
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width / 2, canvas.height / 2);
-      const time = Date.now() * 0.001;
-
-      // Draw animated radial lines
-      ctx.strokeStyle = 'rgba(12, 112, 117, 0.15)';
-      ctx.lineWidth = 1;
+      // Center point
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
       
-      for (let i = 0; i < 8; i++) {
-        const pulse = Math.sin(time * 0.3 + i) * 20;
-        const radius = 100 + i * 40 + pulse;
-        
+      // Draw concentric circles with subtle gradient
+      for (let i = 1; i <= 6; i++) {
+        const radius = 150 + i * 60;
         ctx.beginPath();
         ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        
+        // Create subtle gradient stroke
+        const gradient = ctx.createRadialGradient(
+          centerX, centerY, radius - 1,
+          centerX, centerY, radius + 1
+        );
+        gradient.addColorStop(0, 'rgba(12, 112, 117, 0.05)');
+        gradient.addColorStop(1, 'rgba(12, 112, 117, 0.02)');
+        
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 2;
         ctx.stroke();
       }
-
-      // Draw spectrum bars with animation
-      spectrumBars.forEach(bar => {
-        const waveHeight = Math.sin(time * bar.speed + bar.offset) * bar.height * 0.6;
-        const barHeight = bar.height + waveHeight;
-        
-        // Draw bar with gradient - FIXED: Use proper RGBA colors
-        const gradient = ctx.createLinearGradient(bar.x, centerY - barHeight/2, bar.x, centerY + barHeight/2);
-        gradient.addColorStop(0, `hsla(${bar.hue}, 70%, 60%, 0)`);
-        gradient.addColorStop(0.3, `hsla(${bar.hue}, 70%, 60%, 0.8)`);
-        gradient.addColorStop(0.7, `hsla(${bar.hue}, 70%, 60%, 0.8)`);
-        gradient.addColorStop(1, `hsla(${bar.hue}, 70%, 60%, 0)`);
-        
-        ctx.fillStyle = gradient;
-        ctx.fillRect(bar.x - bar.width/2, centerY - barHeight/2, bar.width, barHeight);
-        
-        // Draw bar glow
-        ctx.shadowColor = `hsl(${bar.hue}, 70%, 60%)`;
-        ctx.shadowBlur = 15;
-        ctx.fillStyle = `hsla(${bar.hue}, 70%, 60%, 0.4)`;
-        ctx.fillRect(bar.x - bar.width/2, centerY - barHeight/2, bar.width, barHeight);
-        ctx.shadowBlur = 0;
-      });
-
-      // Draw center orb with pulse
-      const pulseSize = Math.sin(time * 0.5) * 10;
-      const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 50 + pulseSize);
-      gradient.addColorStop(0, 'rgba(12, 112, 117, 0.8)');
-      gradient.addColorStop(1, 'rgba(12, 112, 117, 0)');
       
-      ctx.fillStyle = gradient;
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, 50 + pulseSize, 0, Math.PI * 2);
-      ctx.fill();
-
-      // Draw particle network
-      particles.forEach((particle, i) => {
-        // Update particle position with wave motion
-        particle.x += particle.speedX + Math.sin(time + particle.waveOffset) * 0.2;
-        particle.y += particle.speedY + Math.cos(time + particle.waveOffset) * 0.2;
+      // Draw connection lines pattern
+      const lineCount = 24;
+      for (let i = 0; i < lineCount; i++) {
+        const angle = (i * Math.PI * 2) / lineCount;
+        const length = 300;
         
-        // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width / 2;
-        if (particle.x > canvas.width / 2) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height / 2;
-        if (particle.y > canvas.height / 2) particle.y = 0;
-        
-        // Draw particle
-        ctx.fillStyle = particle.color;
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.moveTo(centerX, centerY);
+        const endX = centerX + Math.cos(angle) * length;
+        const endY = centerY + Math.sin(angle) * length;
+        ctx.lineTo(endX, endY);
+        
+        // Subtle gradient for lines
+        const lineGradient = ctx.createLinearGradient(centerX, centerY, endX, endY);
+        lineGradient.addColorStop(0, 'rgba(12, 112, 117, 0.04)');
+        lineGradient.addColorStop(1, 'rgba(12, 112, 117, 0.01)');
+        
+        ctx.strokeStyle = lineGradient;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      
+      // Draw floating dots
+      const dotCount = 50;
+      for (let i = 0; i < dotCount; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 100 + Math.random() * 350;
+        const x = centerX + Math.cos(angle) * distance;
+        const y = centerY + Math.sin(angle) * distance;
+        const size = Math.random() * 3 + 1;
+        const opacity = Math.random() * 0.3 + 0.1;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(12, 112, 117, ${opacity})`;
         ctx.fill();
-        
-        // Draw connections to nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const other = particles[j];
-          const dx = particle.x - other.x;
-          const dy = particle.y - other.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          
-          if (distance < 100) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(12, 112, 117, ${0.2 * (1 - distance/100)})`;
-            ctx.lineWidth = 1;
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(other.x, other.y);
-            ctx.stroke();
-          }
-        }
-      });
-
-      // Draw data flow lines
-      ctx.strokeStyle = 'rgba(12, 112, 117, 0.1)';
-      ctx.lineWidth = 1;
-      
-      for (let i = 0; i < 12; i++) {
-        const startAngle = (i * Math.PI * 2) / 12 + time * 0.1;
-        const endAngle = startAngle + Math.PI / 6;
-        const radius = 150 + Math.sin(time * 0.2 + i) * 30;
-        
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-        ctx.stroke();
       }
-
-      animationRef.current = requestAnimationFrame(animate);
     };
 
-    animate();
+    drawPatterns();
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
     };
   }, []);
 
   return (
     <section className="py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
-      {/* Animated Spectrum Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-cyan-50/30">
+      {/* Background with decorative canvas */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/10 via-white to-cyan-50/10">
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full opacity-70"
+          className="absolute inset-0 w-full h-full opacity-30"
         />
       </div>
 
-      {/* Geometric pattern overlay */}
+      {/* Additional decorative patterns */}
       <div className="absolute inset-0">
-        {/* Triangle grid pattern */}
-        <div 
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230C7075' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}
-        />
-        
-        {/* Dotted wave pattern */}
+        {/* Geometric dot pattern */}
         <div 
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(12, 112, 117, 0.3) 1px, transparent 1px),
-                             radial-gradient(circle at 80% 50%, rgba(12, 112, 117, 0.2) 1px, transparent 1px)`,
-            backgroundSize: '80px 80px',
-            backgroundPosition: '0 0, 40px 40px'
+            backgroundImage: `radial-gradient(circle at 25px 25px, rgba(12, 112, 117, 0.15) 2px, transparent 2px)`,
+            backgroundSize: '50px 50px',
           }}
         />
         
-        {/* Hexagon pattern */}
+        {/* Diagonal line pattern */}
         <div 
           className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L93.3 25V75L50 100L6.7 75V25L50 0Z' fill='none' stroke='%230C7075' stroke-width='0.5'/%3E%3C/svg%3E")`,
-            backgroundSize: '150px 150px'
+            backgroundImage: `linear-gradient(45deg, transparent 48%, rgba(12, 112, 117, 0.1) 50%, transparent 52%)`,
+            backgroundSize: '100px 100px',
+          }}
+        />
+        
+        {/* Wave pattern */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,100 Q50,80 100,100 T200,100' fill='none' stroke='%230C7075' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E")`,
+            backgroundSize: '200px 200px',
           }}
         />
       </div>
 
-      {/* Gradient overlays */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-cyan-400/10 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-blue-400/10 to-transparent rounded-full blur-3xl" />
+      {/* Gradient accents */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-200/10 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gradient-to-tr from-blue-200/10 to-transparent rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -325,9 +225,9 @@ export function EnterpriseIntegrationsSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <section className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Enterprise integrations
-          </h2>
+          </section>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             A secure, scalable AI platform that powers autonomous agents, agent assist, and conversational intelligence—built for enterprise environments.
           </p>
