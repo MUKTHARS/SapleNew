@@ -3,11 +3,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { 
-  Headphones, 
-  Users, 
-  TrendingUp, 
-  Workflow,
+
   MessageCircle,
   Shield,
   Clock,
@@ -16,32 +14,32 @@ import {
 
 const useCases = [
   {
-    icon: <Headphones className="w-6 h-6" />,
     title: "Intelligent Customer Support",
     description: "AI Agents that support common customer requests and solve issues 24/7",
-    color: "#0EA5E9",
-    features: ["24/7 availability", "Instant resolution", "Multi-language support"]
+    color: "#ffffffff",
+    features: ["24/7 availability", "Instant resolution", "Multi-language support"],
+    bgImage: "/images/cards.jpg" 
   },
   {
-    icon: <Users className="w-6 h-6" />,
     title: "Employee Knowledge Assist",
     description: "Help employees find answers and assist internal operations teams",
-    color: "#8B5CF6",
-    features: ["Quick knowledge retrieval", "Internal process automation", "Team collaboration"]
+    color: "#ffffffff",
+    features: ["Quick knowledge retrieval", "Internal process automation", "Team collaboration"],
+    bgImage: "/images/cards.jpg" 
   },
   {
-    icon: <TrendingUp className="w-6 h-6" />,
     title: "Sales Enablement",
     description: "Quality leads, answer questions, and automate bookings",
-    color: "#10B981",
-    features: ["Lead qualification", "Automated follow-ups", "Booking automation"]
+    color: "#ffffffff",
+    features: ["Lead qualification", "Automated follow-ups", "Booking automation"],
+    bgImage: "/images/cards.jpg" 
   },
   {
-    icon: <Workflow className="w-6 h-6" />,
     title: "Workflow Automation",
     description: "Trigger processes across your tools to drive measurable results",
-    color: "#F59E0B",
-    features: ["Cross-tool integration", "Automated workflows", "Performance tracking"]
+    color: "#ffffffff",
+    features: ["Cross-tool integration", "Automated workflows", "Performance tracking"],
+    bgImage: "/images/cards.jpg" 
   }
 ];
 
@@ -69,9 +67,9 @@ export function MultipleUseCase() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <section className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             One Conversational AI Platform. Multiple Use Cases.
-          </h2>
+          </section>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Deliver exceptional customer and employee experiences across all touchpoints with our comprehensive AI platform.
           </p>
@@ -88,48 +86,47 @@ export function MultipleUseCase() {
               viewport={{ once: true }}
               className="group h-full"
             >
-              <div className="relative h-full bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#0C7075]/30 hover:shadow-xl transition-all duration-300 flex flex-col">
-                {/* Icon with gradient */}
-                <div 
-                  className="w-14 h-14 rounded-xl mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                  style={{
-                    background: `linear-gradient(135deg, ${useCase.color}20, ${useCase.color}10)`,
-                    border: `1px solid ${useCase.color}30`
-                  }}
-                >
-                  <div style={{ color: useCase.color }}>
-                    {useCase.icon}
-                  </div>
-                </div>
+              
+<div className="relative h-full rounded-2xl p-6 border border-white/10 hover:border-[#0C7075]/50 hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden">
+  {/* Dark background image without black opacity */}
+  <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 opacity-90">
+      <Image src={useCase.bgImage} alt={useCase.title} fill className="object-cover" />
+    </div>
+  </div>
+  
+  {/* Content with white text */}
+  <div className="relative z-10">
+    {/* Title - white text */}
+    <h3 className="text-xl font-semibold text-white mb-3">
+      {useCase.title}
+    </h3>
 
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {useCase.title}
-                </h3>
+    {/* Description - light gray text */}
+   <p className="text-white mb-4 flex-grow">
+  {useCase.description}
+</p>
 
-                {/* Description */}
-                <p className="text-gray-600 mb-4 flex-grow">
-                  {useCase.description}
-                </p>
 
-                {/* Features */}
-                <div className="space-y-2 mt-4">
-                  {useCase.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <div 
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: useCase.color }}
-                      />
-                      <span className="text-sm text-gray-500">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+    {/* Features - light gray text with color accent */}
+    <div className="space-y-2 mt-4">
+      {useCase.features.map((feature, idx) => (
+        <div key={idx} className="flex items-center gap-2">
+          <div 
+            className="w-2 h-2 rounded-full"
+            style={{ backgroundColor: useCase.color }}
+          />
+          <span className="text-sm text-white">{feature}</span>
+        </div>
+      ))}
+    </div>
 
-                {/* Bottom accent line */}
-                <div 
-                  className="mt-6 pt-4 border-t border-gray-100 group-hover:border-[#0C7075]/30 transition-colors duration-300"
-                />
-              </div>
+    {/* Bottom accent line - use case color */}
+    <div 
+      className="mt-6 pt-4 border-t border-white/20 group-hover:border-[#0C7075] transition-colors duration-300"
+    />
+  </div>
+</div>
             </motion.div>
           ))}
         </div>
@@ -148,12 +145,12 @@ export function MultipleUseCase() {
             { icon: <Clock className="w-5 h-5" />, text: "Real-time Processing" },
             { icon: <Target className="w-5 h-5" />, text: "Scalable Architecture" }
           ].map((feature, index) => (
-            <div key={index} className="flex items-center justify-center gap-3 bg-gray-50 rounded-xl p-4">
-              <div className="text-[#0C7075]">
-                {feature.icon}
-              </div>
-              <span className="font-medium text-gray-700">{feature.text}</span>
-            </div>
+            <div key={index} className="flex items-center justify-center gap-3 bg-gray-900/50 rounded-xl p-4 backdrop-blur-sm border border-white/5">
+  <div className="text-white">
+    {feature.icon}
+  </div>
+  <span className="font-medium text-white">{feature.text}</span>
+</div>
           ))}
         </motion.div>
       </div>
