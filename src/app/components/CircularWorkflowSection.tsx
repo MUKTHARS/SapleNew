@@ -171,162 +171,249 @@ export function CircularWorkflowSection({
             </motion.div>
           </div>
 
-          {/* Heptagon Structure with Electric Animation - BEHIND CARDS (z-index: 0) */}
+          {/* Multiple Circle Structure with Electric Animation - BEHIND CARDS (z-index: 0) */}
           <div className="absolute inset-0 flex items-center justify-center z-0">
             <svg className="w-full h-full max-w-2xl max-h-2xl" viewBox="0 0 600 600">
-              {/* Main Heptagon - Dotted Line */}
-              <polygon
-                points="300,100 150,150 100,300 150,450 300,500 450,450 500,300 450,150"
+              {/* Outer Circle - Dotted Line */}
+              <circle
+                cx="300"
+                cy="300"
+                r="150"
                 fill="none"
-                stroke="url(#heptagonGradient)"
-                strokeWidth="3"
-                strokeDasharray="12,12"
-                className="opacity-60"
-              />
+                stroke="url(#outerCircleGradient)"
+                strokeWidth="2.5"
+                strokeDasharray="10,10"
+                className="opacity-70"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  from="0"
+                  to="20"
+                  dur="3s"
+                  repeatCount="indefinite"
+                  calcMode="linear"
+                />
+              </circle>
               
-              {/* Electric Pulse Animation */}
-              <polygon
-                points="300,100 150,150 100,300 150,450 300,500 450,450 500,300 450,150"
+              {/* Middle Circle - Solid Line with Pulse */}
+              <circle
+                cx="300"
+                cy="300"
+                r="140"
                 fill="none"
-                stroke="url(#electricPulse)"
-                strokeWidth="4"
-                strokeDasharray="12,12"
-                strokeLinecap="round"
+                stroke="url(#middleCircleGradient)"
+                strokeWidth="2"
+                className="opacity-60"
+              >
+                <animate
+                  attributeName="r"
+                  values="140;142;140"
+                  dur="2s"
+                  repeatCount="indefinite"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0.6;0.8;0.6"
+                  dur="2s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+              
+              {/* Inner Circle - Electric Glow */}
+              <circle
+                cx="300"
+                cy="300"
+                r="130"
+                fill="none"
+                stroke="url(#innerCircleGradient)"
+                strokeWidth="3"
+                strokeDasharray="8,8"
                 className="opacity-80"
               >
                 <animate
                   attributeName="stroke-dashoffset"
                   from="0"
-                  to="24"
-                  dur="3s"
-                  repeatCount="indefinite"
-                  calcMode="linear"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0.3;0.8;0.3"
-                  dur="1.5s"
-                  repeatCount="indefinite"
-                />
-              </polygon>
-              
-              {/* Electric Glow Effect */}
-              <polygon
-                points="300,100 150,150 100,300 150,450 300,500 450,450 500,300 450,150"
-                fill="none"
-                stroke="url(#electricGlow)"
-                strokeWidth="6"
-                strokeDasharray="12,12"
-                className="opacity-40"
-              >
-                <animate
-                  attributeName="stroke-dashoffset"
-                  from="0"
-                  to="24"
+                  to="16"
                   dur="2.5s"
                   repeatCount="indefinite"
                   calcMode="linear"
-                  begin="0.5s"
-                />
-              </polygon>
-              
-              {/* Electric Spark Particles */}
-              <circle cx="300" cy="100" r="2" fill="#60A5FA">
-                <animateMotion
-                  path="M300,100 L150,150 L100,300 L150,450 L300,500 L450,450 L500,300 L450,150 L300,100"
-                  dur="4s"
-                  repeatCount="indefinite"
-                  rotate="auto"
-                />
-                <animate
-                  attributeName="r"
-                  values="2;4;2"
-                  dur="1s"
-                  repeatCount="indefinite"
                 />
                 <animate
                   attributeName="opacity"
-                  values="0.2;1;0.2"
-                  dur="1s"
+                  values="0.5;0.9;0.5"
+                  dur="1.8s"
                   repeatCount="indefinite"
                 />
               </circle>
               
-              <circle cx="300" cy="100" r="1.5" fill="#8B5CF6">
-                <animateMotion
-                  path="M300,100 L150,150 L100,300 L150,450 L300,500 L450,450 L500,300 L450,150 L300,100"
-                  dur="3.5s"
-                  repeatCount="indefinite"
-                  rotate="auto"
-                  begin="0.3s"
-                />
-                <animate
-                  attributeName="r"
-                  values="1.5;3;1.5"
-                  dur="1.2s"
-                  repeatCount="indefinite"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0.3;0.9;0.3"
-                  dur="1.2s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-              
-              <circle cx="300" cy="100" r="1" fill="#34D399">
-                <animateMotion
-                  path="M300,100 L150,150 L100,300 L150,450 L300,500 L450,450 L500,300 L450,150 L300,100"
-                  dur="5s"
-                  repeatCount="indefinite"
-                  rotate="auto"
-                  begin="0.7s"
-                />
-                <animate
-                  attributeName="r"
-                  values="1;2.5;1"
-                  dur="1.5s"
-                  repeatCount="indefinite"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0.1;0.7;0.1"
-                  dur="1.5s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-              
-              {/* Center lines to each vertex */}
-              {[
-                {x: 300, y: 100},
-                {x: 150, y: 150},
-                {x: 100, y: 300},
-                {x: 150, y: 450},
-                {x: 300, y: 500},
-                {x: 450, y: 450},
-                {x: 500, y: 300}
-              ].map((point, idx) => (
-                <line
-                  key={idx}
-                  x1="300"
-                  y1="300"
-                  x2={point.x}
-                  y2={point.y}
-                  stroke="url(#lineGradient)"
-                  strokeWidth="2"
-                  strokeDasharray="8,8"
-                  className="opacity-15" 
-                />
+              {/* Concentric Electric Rings */}
+              {[160, 155, 145, 135].map((r, i) => (
+                <circle
+                  key={i}
+                  cx="300"
+                  cy="300"
+                  r={r}
+                  fill="none"
+                  stroke={`url(#ringGradient${i})`}
+                  strokeWidth="1.5"
+                  strokeDasharray="6,6"
+                  className="opacity-50"
+                >
+                  <animate
+                    attributeName="stroke-dashoffset"
+                    from="0"
+                    to="12"
+                    dur={`${1.5 + i * 0.5}s`}
+                    repeatCount="indefinite"
+                    calcMode="linear"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values={`0.3;0.${6 + i};0.3`}
+                    dur={`${2 + i * 0.3}s`}
+                    repeatCount="indefinite"
+                  />
+                </circle>
               ))}
               
+             {/* Electric Bursts at Each Vertex */}
+{circularFlow.map((_, index) => {
+  const angle = (index * (360 / 7)) - 90;
+  const angleRad = (angle * Math.PI) / 180;
+  const x = 300 + Math.cos(angleRad) * 160; // Changed from 150 to 160
+  const y = 300 + Math.sin(angleRad) * 160; // Changed from 150 to 160
+  
+  return (
+    <g key={index}>
+      {/* Main Burst */}
+      <circle
+        cx={x}
+        cy={y}
+        r="3"
+        fill="#60A5FA"
+        className="opacity-80"
+      >
+        <animate
+          attributeName="r"
+          values="3;6;3"
+          dur="1.5s"
+          repeatCount="indefinite"
+          begin={`${index * 0.2}s`}
+        />
+        <animate
+          attributeName="opacity"
+          values="0.8;1;0.8"
+          dur="1.5s"
+          repeatCount="indefinite"
+          begin={`${index * 0.2}s`}
+        />
+      </circle>
+      
+      {/* Glow Effect */}
+      <circle
+        cx={x}
+        cy={y}
+        r="8"
+        fill="none"
+        stroke="#3B82F6"
+        strokeWidth="1"
+        className="opacity-40"
+      >
+        <animate
+          attributeName="r"
+          values="8;12;8"
+          dur="2s"
+          repeatCount="indefinite"
+          begin={`${index * 0.3}s`}
+        />
+        <animate
+          attributeName="opacity"
+          values="0.4;0.2;0.4"
+          dur="2s"
+          repeatCount="indefinite"
+          begin={`${index * 0.3}s`}
+        />
+      </circle>
+      
+      {/* Electric Arc to Center */}
+      <path
+        d={`M300,300 L${x},${y}`}
+        stroke="url(#arcGradient)"
+        strokeWidth="1"
+        strokeDasharray="4,4"
+        className="opacity-20"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          from="0"
+          to="8"
+          dur="1s"
+          repeatCount="indefinite"
+          begin={`${index * 0.1}s`}
+        />
+      </path>
+    </g>
+  );
+})}
+
+{/* Center lines to each vertex */}
+{circularFlow.map((_, index) => {
+  const angle = (index * (360 / 7)) - 90;
+  const angleRad = (angle * Math.PI) / 180;
+  const x = 300 + Math.cos(angleRad) * 160; // Changed from 150 to 160
+  const y = 300 + Math.sin(angleRad) * 160; // Changed from 150 to 160
+  
+  return (
+    <line
+      key={index}
+      x1="300"
+      y1="300"
+      x2={x}
+      y2={y}
+      stroke="url(#lineGradient)"
+      strokeWidth="1.5"
+      strokeDasharray="6,6"
+      className="opacity-20"
+    />
+  );
+})}
+              
+              {/* Center lines to each vertex */}
+              {circularFlow.map((_, index) => {
+                const angle = (index * (360 / 7)) - 90;
+                const angleRad = (angle * Math.PI) / 180;
+                const x = 300 + Math.cos(angleRad) * 150;
+                const y = 300 + Math.sin(angleRad) * 150;
+                
+                return (
+                  <line
+                    key={index}
+                    x1="300"
+                    y1="300"
+                    x2={x}
+                    y2={y}
+                    stroke="url(#lineGradient)"
+                    strokeWidth="1.5"
+                    strokeDasharray="6,6"
+                    className="opacity-20"
+                  />
+                );
+              })}
+              
               <defs>
-                <linearGradient id="heptagonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.6" />
-                  <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#10B981" stopOpacity="0.6" />
+                <linearGradient id="outerCircleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.8" />
+                  <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#10B981" stopOpacity="0.8" />
                 </linearGradient>
                 
-                <linearGradient id="electricPulse" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="middleCircleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.9" />
+                  <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#34D399" stopOpacity="0.9" />
+                </linearGradient>
+                
+                <linearGradient id="innerCircleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#60A5FA" />
                   <stop offset="25%" stopColor="#8B5CF6" />
                   <stop offset="50%" stopColor="#34D399" />
@@ -334,146 +421,167 @@ export function CircularWorkflowSection({
                   <stop offset="100%" stopColor="#60A5FA" />
                 </linearGradient>
                 
-                <linearGradient id="electricGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.8" />
-                  <stop offset="25%" stopColor="#8B5CF6" stopOpacity="0.9" />
-                  <stop offset="50%" stopColor="#34D399" stopOpacity="0.8" />
-                  <stop offset="75%" stopColor="#8B5CF6" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.8" />
+                {/* Ring Gradients */}
+                {[0, 1, 2, 3].map((i) => (
+                  <linearGradient key={i} id={`ringGradient${i}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#60A5FA" stopOpacity={0.7 - i * 0.1} />
+                    <stop offset="50%" stopColor="#8B5CF6" stopOpacity={0.8 - i * 0.1} />
+                    <stop offset="100%" stopColor="#34D399" stopOpacity={0.7 - i * 0.1} />
+                  </linearGradient>
+                ))}
+                
+                <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.6" />
+                  <stop offset="50%" stopColor="#8B5CF6" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#60A5FA" stopOpacity="0.6" />
                 </linearGradient>
                 
                 <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.2" />
-                  <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.2" />
+                  <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
             </svg>
           </div>
 
-          {/* Heptagon Nodes - 7 corners - CARDS IN FRONT (z-index: 30) */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            {circularFlow.map((stage, index) => {
-              const radius = 280;
-              const baseAngle = -90;
-              const angleStep = 360 / 7;
-              const angle = baseAngle - (index * angleStep);
-              
-              let adjustedAngle = angle;
-              let adjustedRadius = radius;
-              
-              switch(index) {
-                case 0:
-                  adjustedAngle = -90;
-                  adjustedRadius = radius;
-                  break;
-                case 1:
-                  adjustedAngle = -90 - 51.43;
-                  adjustedRadius = radius + 10;
-                  break;
-                case 2:
-                  adjustedAngle = -90 - (51.43 * 2);
-                  adjustedRadius = radius + 15;
-                  break;
-                case 3:
-                  adjustedAngle = -90 - (51.43 * 3);
-                  adjustedRadius = radius + 10;
-                  break;
-                case 4:
-                  adjustedAngle = -90 - (51.43 * 4);
-                  adjustedRadius = radius;
-                  break;
-                case 5:
-                  adjustedAngle = -90 - (51.43 * 5);
-                  adjustedRadius = radius + 10;
-                  break;
-                case 6:
-                  adjustedAngle = -90 - (51.43 * 6);
-                  adjustedRadius = radius + 15;
-                  break;
+{/* Heptagon Nodes - 7 corners - CARDS IN FRONT (z-index: 30) */}
+<div className="absolute inset-0 flex items-center justify-center">
+  {circularFlow.map((stage, index) => {
+    const radius = 180; // Increased from 150 to 180
+    const baseAngle = -90;
+    const angleStep = 360 / 7;
+    const angle = baseAngle - (index * angleStep);
+    
+    let adjustedAngle = angle;
+    let adjustedRadius = radius;
+    
+    // Increased all radius values to move cards further away from circles
+    switch(index) {
+      case 0:
+        adjustedAngle = -90;
+        adjustedRadius = radius + 40; // Increased from +30 to +40
+        break;
+      case 1:
+        adjustedAngle = -90 - 51.43;
+        adjustedRadius = radius + 55; // Increased from +45 to +55
+        break;
+      case 2:
+        adjustedAngle = -90 - (51.43 * 2);
+        adjustedRadius = radius + 60; // Increased from +50 to +60
+        break;
+      case 3:
+        adjustedAngle = -90 - (51.43 * 3);
+        adjustedRadius = radius + 55; // Increased from +45 to +55
+        break;
+      case 4:
+        adjustedAngle = -90 - (51.43 * 4);
+        adjustedRadius = radius + 40; // Increased from +30 to +40
+        break;
+      case 5:
+        adjustedAngle = -90 - (51.43 * 5);
+        adjustedRadius = radius + 55; // Increased from +45 to +55
+        break;
+      case 6:
+        adjustedAngle = -90 - (51.43 * 6);
+        adjustedRadius = radius + 60; // Increased from +50 to +60
+        break;
+    }
+    
+    const finalAngleRad = (adjustedAngle * Math.PI) / 180;
+    const centerX = Math.cos(finalAngleRad) * adjustedRadius;
+    const centerY = Math.sin(finalAngleRad) * adjustedRadius;
+    
+    const cardWidth = 180;
+    const cardHeight = 70;
+    
+    // Fine-tune positions to maintain symmetry
+    let fineTuneX = 0;
+    let fineTuneY = 0;
+    
+    if (index === 0) {
+      fineTuneY = -35; // Increased from -25 to -35
+    } else if (index === 1) {
+      fineTuneX = -45; // Increased from -35 to -45
+      fineTuneY = -30; // Increased from -20 to -30
+    } else if (index === 2) {
+      fineTuneX = -50; // Increased from -40 to -50
+      fineTuneY = 0;
+    } else if (index === 3) {
+      fineTuneX = -45; // Increased from -35 to -45
+      fineTuneY = 30; // Increased from 20 to 30
+    } else if (index === 4) {
+      fineTuneY = 35; // Increased from 25 to 35
+    } else if (index === 5) {
+      fineTuneX = 45; // Increased from 35 to 45
+      fineTuneY = 30; // Increased from 20 to 30
+    } else if (index === 6) {
+      fineTuneX = 50; // Increased from 40 to 50
+      fineTuneY = 0;
+    }
+    
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, delay: stage.delay }}
+        viewport={{ once: true }}
+        className="absolute z-30 cursor-pointer"
+        style={{
+          left: `calc(50% + ${centerX + fineTuneX}px - ${cardWidth / 2}px)`,
+          top: `calc(50% + ${centerY + fineTuneY}px - ${cardHeight / 2}px)`,
+        }}
+        onMouseLeave={() => {
+          const isCurrentlyActive = activeStage === index;
+          if (!isScrolling && !isCurrentlyActive) {
+            setTimeout(() => {
+              if (!isScrolling && activeStage !== index) {
+                setHoveredStage(null);
               }
+            }, 50);
+          }
+        }}
+        onClick={() => handleFlowCardClick(index)}
+      >
+        <div className="relative group">
+          <div 
+            className={`w-[180px] bg-white/95 backdrop-blur-sm rounded-lg border border-gray-200 shadow-lg transition-all duration-300 ${
+              hoveredStage === index ? 'scale-110 shadow-xl ring-2 ring-blue-300/50' : 'hover:scale-105 hover:shadow-xl'
+            } ${
+              activeStage === index 
+                ? 'ring-2 ring-blue-400 scale-105' 
+                : ''
+            }`}
+          >
+            <div className="p-4 flex items-center gap-3">
+              <div className={`w-8 h-8 ${stage.color} rounded-lg flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-300 shadow-sm`}>
+                <div className="text-white">
+                  {/* Smaller icons */}
+                  {index === 0 && <Search className="w-4 h-4" />}
+                  {index === 1 && <Brain className="w-4 h-4" />}
+                  {index === 2 && <AlertCircle className="w-4 h-4" />}
+                  {index === 3 && <TestTube2 className="w-4 h-4" />}
+                  {index === 4 && <ChartNoAxesCombined className="w-4 h-4" />}
+                  {index === 5 && <Gauge className="w-4 h-4" />}
+                  {index === 6 && <MessageSquare className="w-4 h-4" />}
+                </div>
+              </div>
               
-              const finalAngleRad = (adjustedAngle * Math.PI) / 180;
-              const centerX = Math.cos(finalAngleRad) * adjustedRadius;
-              const centerY = Math.sin(finalAngleRad) * adjustedRadius;
-              
-              const cardWidth = 170;
-              const cardHeight = 150;
-              
-              let fineTuneX = 0;
-              let fineTuneY = 0;
-              
-              if (index === 0) {
-                fineTuneY = -5;
-              } else if (index === 1) {
-                fineTuneX = -10;
-                fineTuneY = -3;
-              } else if (index === 2) {
-                fineTuneX = -15;
-              } else if (index === 3) {
-                fineTuneX = -10;
-                fineTuneY = 3;
-              } else if (index === 4) {
-                fineTuneY = 5;
-              } else if (index === 5) {
-                fineTuneX = 10;
-                fineTuneY = 3;
-              } else if (index === 6) {
-                fineTuneX = 15;
-              }
-              
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: stage.delay }}
-                  viewport={{ once: true }}
-                  className="absolute z-30 cursor-pointer"
-                  style={{
-                    left: `calc(50% + ${centerX + fineTuneX}px - ${cardWidth / 2}px)`,
-                    top: `calc(50% + ${centerY + fineTuneY}px - ${cardHeight / 2}px)`,
-                  }}
-                  onMouseLeave={() => {
-                    const isCurrentlyActive = activeStage === index;
-                    if (!isScrolling && !isCurrentlyActive) {
-                      setTimeout(() => {
-                        if (!isScrolling && activeStage !== index) {
-                          setHoveredStage(null);
-                        }
-                      }, 50);
-                    }
-                  }}
-                  onClick={() => handleFlowCardClick(index)}
-                >
-                  <div className="relative group">
-                    <div 
-                      className={`w-[170px] bg-white/95 backdrop-blur-sm rounded-xl p-4 border border-gray-200 shadow-lg transition-all duration-300 ${
-                        hoveredStage === index ? 'scale-110 shadow-xl ring-2 ring-blue-300/50' : 'hover:scale-105 hover:shadow-xl'
-                      } ${
-                        activeStage === index 
-                          ? 'ring-2 ring-blue-400 scale-105' 
-                          : ''
-                      }`}
-                    >
-                      <div className={`w-9 h-9 ${stage.color} rounded-full flex items-center justify-center mx-auto mb-3 group-hover:rotate-12 transition-transform duration-300 shadow-md`}>
-                        <div className="text-white">
-                          {stage.icon}
-                        </div>
-                      </div>
-                      
-                      <h3 className="text-sm font-bold text-gray-900 mb-2 text-center">
-                        {stage.stage}
-                      </h3>
-                      
-                      <p className="text-xs text-gray-600 text-center leading-tight min-h-[2.5rem]">
-                        {stage.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm font-bold text-gray-900 mb-1 truncate">
+                  {stage.stage}
+                </h3>
+                <p className="text-xs text-gray-600 truncate" title={stage.description}>
+                  {stage.description}
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+      </motion.div>
+    );
+  })}
+</div>  
         </div>
 
         {/* Active stage indicator */}

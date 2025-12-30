@@ -49,7 +49,7 @@ export function EnterpriseIntegrationsSection() {
           {/* Image container directly */}
           <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
             <Image
-              src="/images/Homepage_Plaform_Overview.png"
+              src="/images/Homepage_Plaform_Overview_v3.png"
               alt="Enterprise Integrations Diagram"
               fill
               className="object-contain"
@@ -67,12 +67,12 @@ export function EnterpriseIntegrationsSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0C7075] to-[#072E33] text-white px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 hover:shadow-xl transition-all duration-300 shadow-lg backdrop-blur-sm">
+          {/* <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0C7075] to-[#072E33] text-white px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 hover:shadow-xl transition-all duration-300 shadow-lg backdrop-blur-sm">
             <span>Explore the platform</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </button> */}
         </motion.div>
       </div>
     </section>

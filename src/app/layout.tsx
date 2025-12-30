@@ -1,4 +1,4 @@
-// app/layout.tsx - UPDATED
+// C:\saple.ai\SapleNew\src\app\layout.tsx - UPDATED
 import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
@@ -21,9 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
-      <body className={`${spaceGrotesk.className} bg-black color`}>
-        {/* Google Analytics Script */}
+      <head>
+        {/* Add these meta tags to ensure proper tracking */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Google Analytics Script - Load in head for better tracking */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-7BSBB3JDJR"
           strategy="afterInteractive"
@@ -33,10 +35,13 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-7BSBB3JDJR');
+            gtag('config', 'G-7BSBB3JDJR', {
+              page_path: window.location.pathname,
+            });
           `}
         </Script>
 
+        {/* Microsoft Clarity Script - Load in head for better tracking */}
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -46,7 +51,8 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "si8ook5389");
           `}
         </Script>
-
+      </head>
+      <body className={`${spaceGrotesk.className} bg-black color`}>
         {/* Main layout - navbar and footer always visible */}
         <CyberNavbar />
 
@@ -55,6 +61,32 @@ export default function RootLayout({
         </main>
 
         <HolographicFooter />
+        <Script id="page-view-tracking" strategy="afterInteractive">
+          {`
+            // Track page views on route changes
+            if (typeof window !== 'undefined') {
+              const handleRouteChange = () => {
+                if (window.gtag) {
+                  window.gtag('config', 'G-7BSBB3JDJR', {
+                    page_path: window.location.pathname,
+                  });
+                }
+              };
+              
+              // Listen for Next.js route changes
+              const originalPushState = history.pushState;
+              if (originalPushState) {
+                history.pushState = function(...args) {
+                  const result = originalPushState.apply(this, args);
+                  handleRouteChange();
+                  return result;
+                };
+              }
+              
+              window.addEventListener('popstate', handleRouteChange);
+            }
+          `}
+        </Script>
       </body>
     </html>
   );

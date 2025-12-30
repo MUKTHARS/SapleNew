@@ -54,7 +54,6 @@ export default function PlatformOverviewPage() {
       <PlatformHeroSection />
       <KnowledgeFirstSection />
       <EnterpriseFeaturesSection />
-      <EnterpriseUseCasesSection />
       <CircularWorkflowSection 
         onStageClick={handleFlowCardClick}
         hoveredStage={hoveredStage}
@@ -64,7 +63,6 @@ export default function PlatformOverviewPage() {
         isScrolling={isScrolling}
         setIsScrolling={setIsScrolling}
       />
-      
       <PlatformFeaturesSection 
         interactiveCardsRef={interactiveCardsRef}
         activeStage={activeStage}
@@ -72,9 +70,9 @@ export default function PlatformOverviewPage() {
         setIsScrolling={setIsScrolling}
         handleFlowCardClick={handleFlowCardClick}
       />
-      
-      <EnterpriseCapabilitiesSection />
-      <PlatformCTASection />
+      <EnterpriseUseCasesSection />
+      {/* <EnterpriseCapabilitiesSection /> */}
+      {/* <PlatformCTASection /> */}
     </div>
   );
 }

@@ -28,7 +28,7 @@ export function EnterpriseFeaturesSection() {
                 <span className="text-sm font-medium text-slate-600 uppercase tracking-wider">Enterprise AI</span>
               </div>
               
-              <section className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <section className="text-4xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">
                 Multi-Agent Orchestration at <span className="text-slate-900">Enterprise Scale</span>
               </section>
               
@@ -62,10 +62,6 @@ export function EnterpriseFeaturesSection() {
                     </ul>
                   </div>
                 </div>
-                
-                <p className="text-slate-600 leading-relaxed">
-                  From intent understanding to action execution, Saple AI coordinates specialized agents to resolve complex business scenarios with precision, auditability, and speed.
-                </p>
               </div>
             </div>
             
@@ -158,9 +154,8 @@ export function EnterpriseFeaturesSection() {
                 </Link>
               </div>
               
-              <section className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-                No-Code Speed.<br />
-                <span className="text-slate-900">Pro-Code Power.</span>
+              <section className="text-4xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">
+                No-Code Speed. Pro-Code Power.<br />
               </section>
               
               <p className="text-xl text-slate-700 mb-8 leading-relaxed">
@@ -168,33 +163,29 @@ export function EnterpriseFeaturesSection() {
               </p>
               
               <div className="space-y-6">
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                  <p className="text-slate-600 leading-relaxed">
-                    Saple AI combines visual no-code tools with developer-grade extensibility, allowing teams to rapidly build agentic applications using drag-and-drop flows, reusable templates, and role-based environments—while engineers retain full control through APIs, SDKs, and custom logic.
-                  </p>
-                </div>
-                
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-slate-800">Development Features:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Self Service Agent Builder</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Guardrails Configuration</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Continuous Evaluation</span>
-                    </li>
-                  </ul>
-                </div>
-                
                 <p className="text-slate-600 leading-relaxed">
-                  Built-in simulation, testing, and deployment pipelines ensure enterprise reliability while accelerating time-to-value.
+                  Saple AI combines visual no-code tools with developer-grade extensibility, allowing teams to rapidly build agentic applications using drag-and-drop flows, reusable templates, and role-based environments—while engineers retain full control through APIs, SDKs, and custom logic.
                 </p>
+                
+                <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-slate-800">Development Features:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Self Service Agent Builder</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Guardrails Configuration</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Continuous Evaluation</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -217,7 +208,7 @@ export function EnterpriseFeaturesSection() {
                 <span className="text-sm font-medium text-slate-600 uppercase tracking-wider">Knowledge Intelligence</span>
               </div>
               
-              <section className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <section className="text-4xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">
                 Enterprise-Wide <span className="text-slate-900">Agentic RAG</span><br />
                 & Knowledge Intelligence
               </section>
@@ -227,38 +218,28 @@ export function EnterpriseFeaturesSection() {
               </p>
               
               <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                  {['Documents', 'Databases', 'CRMs', 'ERPs', 'Data Warehouses', 'APIs'].map((source) => (
-                    <div key={source} className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg">
-                      <span className="text-sm text-slate-700">{source}</span>
-                    </div>
-                  ))}
-                </div>
-                
                 <p className="text-slate-600 leading-relaxed">
                   Saple AI delivers agent-driven Retrieval-Augmented Generation (RAG) that connects securely to structured and unstructured data across documents, databases, CRMs, ERPs, and data warehouses—ensuring responses are accurate, contextual, and policy-aware.
                 </p>
                 
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-slate-800">Advanced RAG Capabilities:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Agentic retrieval-augmented generation (RAG)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Query Rephrasing</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Integration Framework</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="pl-6 border-l-2 border-slate-300 italic text-slate-600">
-                  Agents dynamically retrieve, validate, and reason over information in real time—while governance, permissions, and data boundaries are enforced by design.
+                <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-slate-800">Advanced RAG Capabilities:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Agentic retrieval-augmented generation (RAG)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Query Rephrasing</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Integration Framework</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -335,7 +316,7 @@ export function EnterpriseFeaturesSection() {
                 <span className="text-sm font-medium text-slate-600 uppercase tracking-wider">Security & Compliance</span>
               </div>
               
-              <section className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+              <section className="text-4xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">
                 Built for <span className="text-slate-900">Governance,</span><br />
                 Observability & Trust
               </section>
@@ -349,44 +330,28 @@ export function EnterpriseFeaturesSection() {
                   Saple AI embeds governance, security, and observability into every layer of the platform—providing full visibility into agent behavior, decisions, handoffs, and outcomes.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  {[
-                    { label: 'Audit Logs', color: 'bg-slate-100 text-slate-700' },
-                    { label: 'Performance Analytics', color: 'bg-slate-100 text-slate-700' },
-                    { label: 'Policy Enforcement', color: 'bg-slate-100 text-slate-700' }
-                  ].map((item) => (
-                    <div key={item.label} className={`px-4 py-3 rounded-lg ${item.color} text-center`}>
-                      <span className="text-sm font-medium">{item.label}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="space-y-4">
-                  <h4 className="font-semibold text-slate-800">Monitoring & Evaluation Tools:</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Model Hub</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Prompt Studio</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Evaluation Studio</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
-                      <span className="text-slate-600">Agent Monitoring</span>
-                    </li>
-                  </ul>
-                </div>
-                
                 <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                  <p className="text-slate-600 leading-relaxed">
-                    Audit logs, performance analytics, and policy enforcement ensure compliance with enterprise standards and regulatory requirements.
-                  </p>
+                  <div className="space-y-4">
+                    <h4 className="font-semibold text-slate-800">Monitoring & Evaluation Tools:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Model Hub</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Prompt Studio</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Evaluation Studio</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 mt-2 rounded-full bg-slate-600 flex-shrink-0" />
+                        <span className="text-slate-600">Agent Monitoring</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
