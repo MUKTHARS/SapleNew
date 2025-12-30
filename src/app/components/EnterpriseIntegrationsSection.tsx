@@ -39,25 +39,26 @@ export function EnterpriseIntegrationsSection() {
           </p>
         </motion.div>
 
-         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="relative w-full mt-12"
-        >
-          {/* Image container directly */}
-          <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden">
-            <Image
-              src="/images/Homepage_Plaform_Overview_v3.png"
-              alt="Enterprise Integrations Diagram"
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-              priority
-            />
-          </div>
-        </motion.div>
+       <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  viewport={{ once: true }}
+  className="relative w-full mt-8" // Reduced margin-top from mt-12 to mt-8
+>
+  {/* Image container with smaller height */}
+  <div className="relative w-full aspect-[16/8] rounded-3xl overflow-hidden mx-auto max-w-5xl"> 
+    {/* Changed aspect ratio from [16/9] to [16/8] and added max-w-5xl */}
+    <Image
+      src="/images/Homepage_Plaform_Overview_v3.png"
+      alt="Enterprise Integrations Diagram"
+      fill
+      className="object-contain p-4" // Added padding to make image smaller within container
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1000px" // Reduced max size
+      priority
+    />
+  </div>
+</motion.div>
 
         {/* CTA Button */}
         <motion.div
@@ -67,12 +68,12 @@ export function EnterpriseIntegrationsSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          {/* <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0C7075] to-[#072E33] text-white px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 hover:shadow-xl transition-all duration-300 shadow-lg backdrop-blur-sm">
+          <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0C7075] to-[#072E33] text-white px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 hover:shadow-xl transition-all duration-300 shadow-lg backdrop-blur-sm">
             <span>Explore the platform</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button> */}
+          </button>
         </motion.div>
       </div>
     </section>
