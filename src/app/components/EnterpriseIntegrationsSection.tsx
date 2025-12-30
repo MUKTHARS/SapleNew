@@ -46,6 +46,8 @@ export function EnterpriseIntegrationsSection() {
   viewport={{ once: true }}
   className="relative w-full mt-8" // Reduced margin-top from mt-12 to mt-8
 >
+
+
   {/* Image container with smaller height */}
   <div className="relative w-full aspect-[16/8] rounded-3xl overflow-hidden mx-auto max-w-5xl"> 
     {/* Changed aspect ratio from [16/9] to [16/8] and added max-w-5xl */}
