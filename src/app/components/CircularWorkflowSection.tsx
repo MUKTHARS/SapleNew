@@ -280,8 +280,8 @@ export function CircularWorkflowSection({
 {circularFlow.map((_, index) => {
   const angle = (index * (360 / 7)) - 90;
   const angleRad = (angle * Math.PI) / 180;
-  const x = 300 + Math.cos(angleRad) * 160; // Changed from 150 to 160
-  const y = 300 + Math.sin(angleRad) * 160; // Changed from 150 to 160
+  const x = 300 + Math.cos(angleRad) * 160;
+  const y = 300 + Math.sin(angleRad) * 160;
   
   return (
     <g key={index}>
@@ -360,8 +360,8 @@ export function CircularWorkflowSection({
 {circularFlow.map((_, index) => {
   const angle = (index * (360 / 7)) - 90;
   const angleRad = (angle * Math.PI) / 180;
-  const x = 300 + Math.cos(angleRad) * 160; // Changed from 150 to 160
-  const y = 300 + Math.sin(angleRad) * 160; // Changed from 150 to 160
+  const x = 300 + Math.cos(angleRad) * 160;
+  const y = 300 + Math.sin(angleRad) * 160;
   
   return (
     <line
@@ -447,7 +447,7 @@ export function CircularWorkflowSection({
 {/* Heptagon Nodes - 7 corners - CARDS IN FRONT (z-index: 30) */}
 <div className="absolute inset-0 flex items-center justify-center">
   {circularFlow.map((stage, index) => {
-    const radius = 180; // Increased from 150 to 180
+    const radius = 200;
     const baseAngle = -90;
     const angleStep = 360 / 7;
     const angle = baseAngle - (index * angleStep);
@@ -455,35 +455,35 @@ export function CircularWorkflowSection({
     let adjustedAngle = angle;
     let adjustedRadius = radius;
     
-    // Increased all radius values to move cards further away from circles
+    // Adjust radii for better vertical placement
     switch(index) {
       case 0:
         adjustedAngle = -90;
-        adjustedRadius = radius + 40; // Increased from +30 to +40
+        adjustedRadius = radius + 60;
         break;
       case 1:
         adjustedAngle = -90 - 51.43;
-        adjustedRadius = radius + 55; // Increased from +45 to +55
+        adjustedRadius = radius + 75;
         break;
-      case 2:
+      case 2: // Debug card
         adjustedAngle = -90 - (51.43 * 2);
-        adjustedRadius = radius + 60; // Increased from +50 to +60
+        adjustedRadius = radius + 75; // Reduced from 80 to 75
         break;
-      case 3:
-        adjustedAngle = -90 - (51.43 * 3);
-        adjustedRadius = radius + 55; // Increased from +45 to +55
+      case 3: // Test card
+        adjustedAngle = -90 - (51.43 * 3) + 5;
+        adjustedRadius = radius + 60; // Reduced from 65 to 60
         break;
-      case 4:
-        adjustedAngle = -90 - (51.43 * 4);
-        adjustedRadius = radius + 40; // Increased from +30 to +40
+      case 4: // Analyze card
+        adjustedAngle = -90 - (51.43 * 4) - 5;
+        adjustedRadius = radius + 70; // Reduced from 75 to 70
         break;
-      case 5:
+      case 5: // Measure card
         adjustedAngle = -90 - (51.43 * 5);
-        adjustedRadius = radius + 55; // Increased from +45 to +55
+        adjustedRadius = radius + 70; // Reduced from 75 to 70
         break;
       case 6:
         adjustedAngle = -90 - (51.43 * 6);
-        adjustedRadius = radius + 60; // Increased from +50 to +60
+        adjustedRadius = radius + 80;
         break;
     }
     
@@ -491,32 +491,33 @@ export function CircularWorkflowSection({
     const centerX = Math.cos(finalAngleRad) * adjustedRadius;
     const centerY = Math.sin(finalAngleRad) * adjustedRadius;
     
-    const cardWidth = 180;
-    const cardHeight = 70;
+    const cardWidth = 320;
+    const cardHeight = 80;
     
-    // Fine-tune positions to maintain symmetry
+    // Adjust vertical positions to move cards higher
     let fineTuneX = 0;
     let fineTuneY = 0;
     
     if (index === 0) {
-      fineTuneY = -35; // Increased from -25 to -35
+      fineTuneY = -30; // Moved up from -45 to -30
     } else if (index === 1) {
-      fineTuneX = -45; // Increased from -35 to -45
-      fineTuneY = -30; // Increased from -20 to -30
-    } else if (index === 2) {
-      fineTuneX = -50; // Increased from -40 to -50
-      fineTuneY = 0;
-    } else if (index === 3) {
-      fineTuneX = -45; // Increased from -35 to -45
-      fineTuneY = 30; // Increased from 20 to 30
-    } else if (index === 4) {
-      fineTuneY = 35; // Increased from 25 to 35
-    } else if (index === 5) {
-      fineTuneX = 45; // Increased from 35 to 45
-      fineTuneY = 30; // Increased from 20 to 30
+      fineTuneX = -85;
+      fineTuneY = -25; // Moved up from -40 to -25
+    } else if (index === 2) { // Debug card
+      fineTuneX = -90;
+      fineTuneY = -20; // Moved up from 0 to -20
+    } else if (index === 3) { // Test card
+      fineTuneX = -95;
+      fineTuneY = -5; // Moved up from 10 to -5
+    } else if (index === 4) { // Analyze card
+      fineTuneX = 10;
+      fineTuneY = 40; // Moved up from 75 to 40
+    } else if (index === 5) { // Measure card
+      fineTuneX = 85;
+      fineTuneY = 25; // Moved up from 40 to 25
     } else if (index === 6) {
-      fineTuneX = 50; // Increased from 40 to 50
-      fineTuneY = 0;
+      fineTuneX = 90;
+      fineTuneY = -5; // Moved up from 0 to -5
     }
     
     return (
@@ -545,7 +546,7 @@ export function CircularWorkflowSection({
       >
         <div className="relative group">
           <div 
-            className={`w-[180px] bg-white/95 backdrop-blur-sm rounded-lg border border-gray-200 shadow-lg transition-all duration-300 ${
+            className={`w-[320px] bg-white/95 backdrop-blur-sm rounded-lg border border-gray-200 shadow-lg transition-all duration-300 ${
               hoveredStage === index ? 'scale-110 shadow-xl ring-2 ring-blue-300/50' : 'hover:scale-105 hover:shadow-xl'
             } ${
               activeStage === index 
@@ -553,25 +554,24 @@ export function CircularWorkflowSection({
                 : ''
             }`}
           >
-            <div className="p-4 flex items-center gap-3">
-              <div className={`w-8 h-8 ${stage.color} rounded-lg flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-300 shadow-sm`}>
+            <div className="p-4 flex items-center gap-4">
+              <div className={`w-10 h-10 ${stage.color} rounded-lg flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-300 shadow-sm`}>
                 <div className="text-white">
-                  {/* Smaller icons */}
-                  {index === 0 && <Search className="w-4 h-4" />}
-                  {index === 1 && <Brain className="w-4 h-4" />}
-                  {index === 2 && <AlertCircle className="w-4 h-4" />}
-                  {index === 3 && <TestTube2 className="w-4 h-4" />}
-                  {index === 4 && <ChartNoAxesCombined className="w-4 h-4" />}
-                  {index === 5 && <Gauge className="w-4 h-4" />}
-                  {index === 6 && <MessageSquare className="w-4 h-4" />}
+                  {index === 0 && <Search className="w-5 h-5" />}
+                  {index === 1 && <Brain className="w-5 h-5" />}
+                  {index === 2 && <AlertCircle className="w-5 h-5" />}
+                  {index === 3 && <TestTube2 className="w-5 h-5" />}
+                  {index === 4 && <ChartNoAxesCombined className="w-5 h-5" />}
+                  {index === 5 && <Gauge className="w-5 h-5" />}
+                  {index === 6 && <MessageSquare className="w-5 h-5" />}
                 </div>
               </div>
               
               <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-bold text-gray-900 mb-1 truncate">
+                <h3 className="text-base font-bold text-gray-900 mb-1">
                   {stage.stage}
                 </h3>
-                <p className="text-xs text-gray-600 truncate" title={stage.description}>
+                <p className="text-sm text-gray-600 whitespace-nowrap overflow-hidden text-ellipsis" title={stage.description}>
                   {stage.description}
                 </p>
               </div>
@@ -581,7 +581,7 @@ export function CircularWorkflowSection({
       </motion.div>
     );
   })}
-</div>  
+</div>
         </div>
 
         {/* Active stage indicator */}

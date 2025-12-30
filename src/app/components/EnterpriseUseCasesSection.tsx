@@ -45,7 +45,7 @@ export function EnterpriseUseCasesSection() {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const itemsPerView = 1;
+//   const itemsPerView = 1;
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % useCases.length);

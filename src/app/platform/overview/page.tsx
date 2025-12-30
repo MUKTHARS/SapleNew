@@ -5,8 +5,8 @@ import { KnowledgeFirstSection } from '@/app/components/KnowledgeFirstSection';
 import { PlatformHeroSection } from '@/app/components/PlatformHeroSection';
 import { CircularWorkflowSection } from '@/app/components/CircularWorkflowSection';
 import { PlatformFeaturesSection } from '@/app/components/PlatformFeaturesSection';
-import { EnterpriseCapabilitiesSection } from '@/app/components/EnterpriseCapabilitiesSection';
-import { PlatformCTASection } from '@/app/components/PlatformCTASection';
+// import { EnterpriseCapabilitiesSection } from '@/app/components/EnterpriseCapabilitiesSection';
+// import { PlatformCTASection } from '@/app/components/PlatformCTASection';
 import { EnterpriseFeaturesSection } from '@/app/components/EnterpriseFeaturesSection';
 import { EnterpriseUseCasesSection } from '@/app/components/EnterpriseUseCasesSection';
 
