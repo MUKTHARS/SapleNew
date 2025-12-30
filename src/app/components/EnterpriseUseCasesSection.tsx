@@ -114,7 +114,7 @@ export function EnterpriseUseCasesSection() {
                     {useCase.description}
                   </p>
                   
-                  <div className="pt-4 border-t border-slate-200">
+                  {/* <div className="pt-4 border-t border-slate-200">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-slate-500">Learn more</span>
                       <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 transition-colors">
@@ -123,7 +123,7 @@ export function EnterpriseUseCasesSection() {
                         </svg>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             ))}
