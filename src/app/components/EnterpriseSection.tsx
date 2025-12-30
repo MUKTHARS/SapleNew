@@ -37,100 +37,104 @@ export function EnterpriseSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
-          {/* Left content - Glass cards */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex flex-col justify-center"
-          >
-            <div className="space-y-6">
-              {[
-                {
-                  icon: <Users className="w-5 h-5" />,
-                  title: "Tailored Experiences",
-                  description: "Bespoke experiences that build strong connections and nurture lasting customer loyalty."
-                },
-                {
-                  icon: <MessageSquare className="w-5 h-5" />,
-                  title: "Humanlike Conversation",
-                  description: "Delight customers with lifelike, empathetic conversations powered by Generative AI."
-                },
-                {
-                  icon: <Volume2 className="w-5 h-5" />,
-                  title: "Voice and Chat Engagement",
-                  description: "Enable seamless, next-gen interactions across voice and chat, offering multimodal engagement."
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group relative"
-                >
-                  {/* Premium Glass Card */}
-                  <div className="relative rounded-2xl p-6 overflow-hidden transition-all duration-500 bg-gradient-to-br from-white/90 via-white/70 to-white/90 backdrop-blur-md border border-white/80 border-t-white/90 border-l-white/90 shadow-[0_8px_32px_rgba(14,165,233,0.08)] shadow-sky-200/30 before:absolute before:inset-0 before:rounded-2xl before:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6),inset_0_-1px_0_0_rgba(14,165,233,0.1)] hover:shadow-[0_20px_50px_rgba(14,165,233,0.15)] hover:shadow-sky-300/40 hover:scale-[1.02] hover:bg-gradient-to-br from-white via-white/85 to-white hover:border-white hover:before:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),inset_0_-1px_0_0_rgba(14,165,233,0.15)]">
-                    
-                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      style={{
-                        background: `linear-gradient(135deg, rgba(14, 165, 233, 0.03) 0%, rgba(56, 189, 248, 0.02) 50%, rgba(6, 182, 212, 0.01) 100%)`
-                      }}
-                    />
+        {/* Single backend frame container */}
+        <div className="relative rounded-2xl overflow-hidden bg-[#cce7f1]/90 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(14,165,233,0.1)]">
+        {/* <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 via-white/70 to-white/90 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(14,165,233,0.1)]"> */}
+          <div className="grid lg:grid-cols-2 gap-12 p-8">
+            {/* Left content - Glass cards */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="flex flex-col justify-center"
+            >
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: <Users className="w-5 h-5" />,
+                    title: "Tailored Experiences",
+                    description: "Bespoke experiences that build strong connections and nurture lasting customer loyalty."
+                  },
+                  {
+                    icon: <MessageSquare className="w-5 h-5" />,
+                    title: "Humanlike Conversation",
+                    description: "Delight customers with lifelike, empathetic conversations powered by Generative AI."
+                  },
+                  {
+                    icon: <Volume2 className="w-5 h-5" />,
+                    title: "Voice and Chat Engagement",
+                    description: "Enable seamless, next-gen interactions across voice and chat, offering multimodal engagement."
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="group relative"
+                  >
+                    {/* Premium Glass Card */}
+                    <div className="relative rounded-2xl p-6 overflow-hidden transition-all duration-500 bg-gradient-to-br from-white/90 via-white/70 to-white/90 backdrop-blur-md border border-white/80 border-t-white/90 border-l-white/90 shadow-[0_8px_32px_rgba(14,165,233,0.08)] shadow-sky-200/30 before:absolute before:inset-0 before:rounded-2xl before:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6),inset_0_-1px_0_0_rgba(14,165,233,0.1)] hover:shadow-[0_20px_50px_rgba(14,165,233,0.15)] hover:shadow-sky-300/40 hover:scale-[1.02] hover:bg-gradient-to-br from-white via-white/85 to-white hover:border-white hover:before:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8),inset_0_-1px_0_0_rgba(14,165,233,0.15)]">
+                      
+                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        style={{
+                          background: `linear-gradient(135deg, rgba(14, 165, 233, 0.03) 0%, rgba(56, 189, 248, 0.02) 50%, rgba(6, 182, 212, 0.01) 100%)`
+                        }}
+                      />
 
-                    <div className="relative z-10">
-                      <div className="flex items-start gap-4">
-                       <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white to-sky-50 shadow-[0_4px_12px_rgba(12,112,117,0.1)] border border-white/80 flex items-center justify-center group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(12,112,117,0.15)] transition-all duration-300 flex-shrink-0">
-  <div className="text-[#0C7075] group-hover:text-[#072E33]">
-    {item.icon}
+                      <div className="relative z-10">
+                        <div className="flex items-start gap-4">
+                         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-white to-sky-50 shadow-[0_4px_12px_rgba(12,112,117,0.1)] border border-white/80 flex items-center justify-center group-hover:scale-110 group-hover:shadow-[0_8px_24px_rgba(12,112,117,0.15)] transition-all duration-300 flex-shrink-0">
+    <div className="text-[#0C7075] group-hover:text-[#072E33]">
+      {item.icon}
+    </div>
   </div>
-</div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-gray-600 text-sm leading-relaxed">
-                            {item.description}
-                          </p>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                              {item.title}
+                            </h3>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="flex items-center gap-2 pt-4 mt-4 border-t border-gray-100 group-hover:border-sky-100 transition-colors">
-                        <div className="flex-1">
-                          <div className="h-px bg-gradient-to-r from-transparent via-sky-200/30 to-transparent group-hover:via-sky-300/50 transition-all duration-500" />
+                        <div className="flex items-center gap-2 pt-4 mt-4 border-t border-gray-100 group-hover:border-sky-100 transition-colors">
+                          <div className="flex-1">
+                            <div className="h-px bg-gradient-to-r from-transparent via-sky-200/30 to-transparent group-hover:via-sky-300/50 transition-all duration-500" />
+                          </div>
+                          <div className="text-xs font-medium text-sky-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            Learn more
+                          </div>
+                          <svg className="w-4 h-4 text-sky-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" 
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
                         </div>
-                        <div className="text-xs font-medium text-sky-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          Learn more
-                        </div>
-                        <svg className="w-4 h-4 text-sky-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" 
-                          fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
 
-          {/* Right content - Slideshow */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative h-full"
-          >
-            {/* Glass container for slideshow - Removed padding to make inner container fit perfectly */}
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 via-white/70 to-white/90 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(14,165,233,0.1)] h-full min-h-[500px]"> {/* Removed p-3 */}
-              {/* Removed wrapper div since Slideshow will handle full height */}
-              <Slideshow />
-            </div>
-          </motion.div>
+           {/* Right content - Slideshow */}
+<motion.div
+  initial={{ opacity: 0, x: 30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="relative h-full"
+>
+  {/* Add glass container for slideshow */}
+  <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/90 via-white/70 to-white/90 backdrop-blur-md border border-white/80 shadow-[0_8px_32px_rgba(14,165,233,0.1)] h-full min-h-[500px]">
+    <Slideshow />
+  </div>
+</motion.div>
+
+          </div>
         </div>
       </div>
     </section>

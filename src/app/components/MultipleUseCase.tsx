@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { 
 
-  MessageCircle,
-  Shield,
-  Clock,
-  Target
+  // MessageCircle,
+  // Shield,
+  // Clock,
+  // Target
 } from 'lucide-react';
 
 const useCases = [
@@ -132,7 +132,7 @@ export function MultipleUseCase() {
         </div>
 
         {/* Additional Features */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -152,7 +152,7 @@ export function MultipleUseCase() {
   <span className="font-medium text-white">{feature.text}</span>
 </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

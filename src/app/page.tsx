@@ -10,7 +10,7 @@ import { EnterpriseSection } from './components/EnterpriseSection';
 import { StatsSection } from './components/StatsSection';
 import { CtaSection } from './components/CtaSection';
 import { ErrorBoundary } from './components/ErrorBoundary';
-import { KnowledgeFirstSection } from '@/app/components/KnowledgeFirstSection';
+// import { KnowledgeFirstSection } from '@/app/components/KnowledgeFirstSection';
 import { EnterpriseIntegrationsSection } from '@/app/components/EnterpriseIntegrationsSection';
 import { MultipleUseCase } from '@/app/components/MultipleUseCase';
 
@@ -145,7 +145,7 @@ export default function Home() {
        
         <EnterpriseIntegrationsSection />
         <MultipleUseCase />
-        <KnowledgeFirstSection />
+        {/* <KnowledgeFirstSection /> */}
         <StatsSection />
         <CtaSection />
       </ErrorBoundary>
