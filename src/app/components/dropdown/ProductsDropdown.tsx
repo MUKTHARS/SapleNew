@@ -218,21 +218,21 @@ export function ProductsDropdown() {
                           </p>
                         </Link>
                         
-{/*                        
+                     
                         <ul className="space-y-2.5">
 {category.items.map((item, itemIndex) => (
   <li key={itemIndex}>
-    <Link
+    {/* <Link
       href={item.href}
       className="!text-black hover:!text-black transition-colors duration-200 flex items-start group"
       onClick={() => setIsOpen(false)}
-    >
+    > */}
       
       <span className="text-[14.5px] leading-relaxed">{item.name}</span>
-    </Link>
+    {/* </Link> */}
   </li>
 ))}
-                        </ul> */}
+                        </ul> 
                       </div>
                     ))}
                   </div>
