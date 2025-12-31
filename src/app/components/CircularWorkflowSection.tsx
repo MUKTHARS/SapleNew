@@ -10,9 +10,7 @@ import {
   ChartNoAxesCombined, 
   Gauge, 
   MessageSquare,
-//   Sparkles 
 } from 'lucide-react';
-// import { useState, useRef } from 'react';
 
 const circularFlow = [
   { 
@@ -187,8 +185,8 @@ export function CircularWorkflowSection({
               >
                 <animate
                   attributeName="stroke-dashoffset"
-                  from="0"
-                  to="20"
+                  from="20"
+                  to="0"
                   dur="3s"
                   repeatCount="indefinite"
                   calcMode="linear"
@@ -232,8 +230,8 @@ export function CircularWorkflowSection({
               >
                 <animate
                   attributeName="stroke-dashoffset"
-                  from="0"
-                  to="16"
+                  from="16"
+                  to="0"
                   dur="2.5s"
                   repeatCount="indefinite"
                   calcMode="linear"
@@ -261,8 +259,8 @@ export function CircularWorkflowSection({
                 >
                   <animate
                     attributeName="stroke-dashoffset"
-                    from="0"
-                    to="12"
+                    from="12"
+                    to="0"
                     dur={`${1.5 + i * 0.5}s`}
                     repeatCount="indefinite"
                     calcMode="linear"
@@ -345,8 +343,8 @@ export function CircularWorkflowSection({
       >
         <animate
           attributeName="stroke-dashoffset"
-          from="0"
-          to="8"
+          from="8"
+          to="0"
           dur="1s"
           repeatCount="indefinite"
           begin={`${index * 0.1}s`}
@@ -374,7 +372,16 @@ export function CircularWorkflowSection({
       strokeWidth="1.5"
       strokeDasharray="6,6"
       className="opacity-20"
-    />
+    >
+      <animate
+        attributeName="stroke-dashoffset"
+        from="12"
+        to="0"
+        dur="1.5s"
+        repeatCount="indefinite"
+        begin={`${index * 0.1}s`}
+      />
+    </line>
   );
 })}
               
@@ -396,7 +403,16 @@ export function CircularWorkflowSection({
                     strokeWidth="1.5"
                     strokeDasharray="6,6"
                     className="opacity-20"
-                  />
+                  >
+                    <animate
+                      attributeName="stroke-dashoffset"
+                      from="12"
+                      to="0"
+                      dur="1.5s"
+                      repeatCount="indefinite"
+                      begin={`${index * 0.2}s`}
+                    />
+                  </line>
                 );
               })}
               
@@ -450,39 +466,39 @@ export function CircularWorkflowSection({
     const radius = 200;
     const baseAngle = -90;
     const angleStep = 360 / 7;
-    const angle = baseAngle - (index * angleStep);
+    const angle = baseAngle + (index * angleStep);
     
     let adjustedAngle = angle;
     let adjustedRadius = radius;
     
-    // Adjust radii for better vertical placement
+    // Adjust radii for better vertical placement - clockwise arrangement
     switch(index) {
       case 0:
         adjustedAngle = -90;
         adjustedRadius = radius + 60;
         break;
       case 1:
-        adjustedAngle = -90 - 51.43;
+        adjustedAngle = -90 + 51.43;
         adjustedRadius = radius + 75;
         break;
       case 2: // Debug card
-        adjustedAngle = -90 - (51.43 * 2);
-        adjustedRadius = radius + 75; // Reduced from 80 to 75
+        adjustedAngle = -90 + (51.43 * 2);
+        adjustedRadius = radius + 75;
         break;
       case 3: // Test card
-        adjustedAngle = -90 - (51.43 * 3) + 5;
-        adjustedRadius = radius + 60; // Reduced from 65 to 60
+        adjustedAngle = -90 + (51.43 * 3) - 5;
+        adjustedRadius = radius + 60;
         break;
       case 4: // Analyze card
-        adjustedAngle = -90 - (51.43 * 4) - 5;
-        adjustedRadius = radius + 70; // Reduced from 75 to 70
+        adjustedAngle = -90 + (51.43 * 4) + 5;
+        adjustedRadius = radius + 70;
         break;
       case 5: // Measure card
-        adjustedAngle = -90 - (51.43 * 5);
-        adjustedRadius = radius + 70; // Reduced from 75 to 70
+        adjustedAngle = -90 + (51.43 * 5);
+        adjustedRadius = radius + 70;
         break;
       case 6:
-        adjustedAngle = -90 - (51.43 * 6);
+        adjustedAngle = -90 + (51.43 * 6);
         adjustedRadius = radius + 80;
         break;
     }
@@ -494,30 +510,30 @@ export function CircularWorkflowSection({
     const cardWidth = 320;
     const cardHeight = 80;
     
-    // Adjust vertical positions to move cards higher
+    // Adjust vertical positions for clockwise arrangement
     let fineTuneX = 0;
     let fineTuneY = 0;
     
     if (index === 0) {
-      fineTuneY = -30; // Moved up from -45 to -30
+      fineTuneY = -30;
     } else if (index === 1) {
-      fineTuneX = -85;
-      fineTuneY = -25; // Moved up from -40 to -25
-    } else if (index === 2) { // Debug card
-      fineTuneX = -90;
-      fineTuneY = -20; // Moved up from 0 to -20
-    } else if (index === 3) { // Test card
-      fineTuneX = -95;
-      fineTuneY = -5; // Moved up from 10 to -5
-    } else if (index === 4) { // Analyze card
-      fineTuneX = 10;
-      fineTuneY = 40; // Moved up from 75 to 40
-    } else if (index === 5) { // Measure card
       fineTuneX = 85;
-      fineTuneY = 25; // Moved up from 40 to 25
-    } else if (index === 6) {
+      fineTuneY = -25;
+    } else if (index === 2) {
       fineTuneX = 90;
-      fineTuneY = -5; // Moved up from 0 to -5
+      fineTuneY = -20;
+    } else if (index === 3) {
+      fineTuneX = 95;
+      fineTuneY = -5;
+    } else if (index === 4) {
+      fineTuneX = -10;
+      fineTuneY = 40;
+    } else if (index === 5) {
+      fineTuneX = -85;
+      fineTuneY = 25;
+    } else if (index === 6) {
+      fineTuneX = -90;
+      fineTuneY = -5;
     }
     
     return (

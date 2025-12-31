@@ -6,7 +6,8 @@ import { ArrowRight, PlayCircle } from 'lucide-react';
 
 export function HeroSection() {
   return (
-    <section className="relative pt-20 pb-16 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 overflow-hidden bg-gradient-to-b from-gray-900 to-black">
+    <section className="relative pt-28 pb-20 md:pt-32 md:pb-24 lg:pt-36 lg:pb-28 overflow-hidden bg-gradient-to-b from-gray-900 to-black">
+    {/* <section className="relative pt-20 pb-16 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 overflow-hidden bg-gradient-to-b from-gray-900 to-black"> */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0)`,
@@ -22,11 +23,11 @@ export function HeroSection() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Deliver exceptional CX for less, with human-centric AI Agents you can trust
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg md:text-1xl text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
               Saple AI Agents deliver natural, human-like conversations across chat, voice, and messaging 
               channels - designed to understand intent, take action, and resolve customer needs autonomously. 
               Built with enterprise-grade safety, observability, and control.

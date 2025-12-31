@@ -2,7 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 export function CtaSection() {
@@ -37,7 +37,7 @@ export function CtaSection() {
 
             <div className="relative p-12 md:p-16">
               {/* Badge */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -46,7 +46,7 @@ export function CtaSection() {
               >
                 <Sparkles className="w-4 h-4 text-yellow-400" />
                 <span className="text-sm font-semibold text-white">Get Started Today</span>
-              </motion.div>
+              </motion.div> */}
 
               {/* Heading */}
               <motion.h2

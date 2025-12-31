@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { KnowledgeFirstSection } from '@/app/components/KnowledgeFirstSection';
 import { PlatformHeroSection } from '@/app/components/PlatformHeroSection';
 import { CircularWorkflowSection } from '@/app/components/CircularWorkflowSection';
-import { PlatformFeaturesSection } from '@/app/components/PlatformFeaturesSection';
+// import { PlatformFeaturesSection } from '@/app/components/PlatformFeaturesSection';
 // import { EnterpriseCapabilitiesSection } from '@/app/components/EnterpriseCapabilitiesSection';
 // import { PlatformCTASection } from '@/app/components/PlatformCTASection';
 import { EnterpriseFeaturesSection } from '@/app/components/EnterpriseFeaturesSection';
@@ -63,13 +63,13 @@ export default function PlatformOverviewPage() {
         isScrolling={isScrolling}
         setIsScrolling={setIsScrolling}
       />
-      <PlatformFeaturesSection 
+      {/* <PlatformFeaturesSection 
         interactiveCardsRef={interactiveCardsRef}
         activeStage={activeStage}
         setActiveStage={setActiveStage}
         setIsScrolling={setIsScrolling}
         handleFlowCardClick={handleFlowCardClick}
-      />
+      /> */}
       <EnterpriseUseCasesSection />
       {/* <EnterpriseCapabilitiesSection /> */}
       {/* <PlatformCTASection /> */}

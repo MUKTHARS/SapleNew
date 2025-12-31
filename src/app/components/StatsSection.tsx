@@ -32,10 +32,13 @@ export function StatsSection() {
             <div className="w-2 h-2 bg-sky-500 rounded-full animate-pulse" />
             <span className="text-sm font-medium text-sky-800">Proven Results</span>
           </div> */}
-          <section className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          {/* <section className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            
+          </section> */}
+          <section className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Boost Your Bottom Line with AI
           </section>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Future proof your processes and stay on the cutting-edge of technology. Optimize customer experience by deploying smart, AI-enabled automation services.
           </p>
         </motion.div>

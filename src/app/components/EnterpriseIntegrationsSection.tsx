@@ -29,8 +29,8 @@ export function EnterpriseIntegrationsSection() {
           className="text-center max-w-4xl mx-auto mb-16 space-y-6"
         >
           {/* Main Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Enterprise integrations
+          <h2 className="text-4xl md:text-5xl  font-bold text-white leading-tight">
+            Enterprise Integrations
           </h2>
 
           {/* Description */}

@@ -64,7 +64,7 @@ export function FeaturesSection() {
             <Zap className="w-4 h-4 text-green-400" />
             <span className="text-sm font-medium text-white/90">AI Agents for the Enterprise</span>
           </div> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl text-white mb-6">
             The Future of Customer Service
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">

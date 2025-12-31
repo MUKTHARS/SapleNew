@@ -150,7 +150,7 @@ export function ScrollSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Intelligent Customer
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">
                 Service Platform

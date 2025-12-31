@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export function PlatformHeroSection() {
   return (
-    <section className="relative overflow-hidden py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
+    <section className="relative overflow-hidden py-45 px-4 bg-gradient-to-b from-gray-900 to-black">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '3s' }} />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }} />
@@ -20,7 +20,7 @@ export function PlatformHeroSection() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl  text-white mb-8 leading-tight">
             
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">
               Saple AI Platform

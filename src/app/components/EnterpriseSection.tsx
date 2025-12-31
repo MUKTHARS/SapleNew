@@ -29,7 +29,7 @@ export function EnterpriseSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <section className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+          <section className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Smarter, Faster, Better.
           </section>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">

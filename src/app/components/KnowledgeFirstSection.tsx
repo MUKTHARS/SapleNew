@@ -29,12 +29,12 @@ export function KnowledgeFirstSection() {
           className="text-center max-w-4xl mx-auto mb-16 space-y-6"
         >
           {/* Main Heading */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-5xl text-white leading-tight">
             A knowledge-first AI platform built for scale
           </h2>
 
           {/* Description */}
-          <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
             Empower users with AI-driven solutions across channels and content mediums — including voice, video, live translation, and seamless agent escalation.
           </p>
         </motion.div>

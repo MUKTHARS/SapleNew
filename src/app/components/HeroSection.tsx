@@ -61,7 +61,7 @@ export function HeroSection() {
           >
 
             {/* Main heading - Fixed line breaks */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-6">
               Enterprise-ready
               <span className="block mt-2">
                 Customer Service Automation
@@ -69,7 +69,7 @@ export function HeroSection() {
             </h1>
 
             {/* Description */}
-            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto mb-10 leading-relaxed">
               Enhance customer service with AI-powered chat and voice automation. Deploy empathetic multimodal AI agents that scale relationships that matter for your business.
             </p>
 

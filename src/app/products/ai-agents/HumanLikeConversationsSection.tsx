@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export function HumanLikeConversationsSection() {
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-black">
+<section className="py-24 md:py-28 lg:py-32 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div

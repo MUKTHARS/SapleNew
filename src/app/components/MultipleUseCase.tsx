@@ -39,7 +39,7 @@ const useCases = [
 
 export function MultipleUseCase() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [, setIsAutoPlaying] = useState(true);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);

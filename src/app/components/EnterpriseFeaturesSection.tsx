@@ -69,9 +69,9 @@ export function EnterpriseFeaturesSection() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="aspect-square relative">
+                  <div className="aspect-[16/10] relative">
                     <Image
-                      src="/images/multi-agent-orchestration.png"
+                      src="/images/Multi-Agent Orchestration.png"
                       alt="Multi-Agent Orchestration"
                       fill
                       className="object-cover"
@@ -106,9 +106,9 @@ export function EnterpriseFeaturesSection() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="aspect-square relative">
+                  <div className="aspect-[16/10] relative">
                     <Image
-                      src="/images/nocode.png"
+                      src="/images/No Code.png"
                       alt="No-Code Pro-Code Interface"
                       fill
                       className="object-cover"
@@ -248,9 +248,9 @@ export function EnterpriseFeaturesSection() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="aspect-square relative">
+                   <div className="aspect-[16/10] relative">
                     <Image
-                      src="/images/rag.png"
+                      src="/images/Agentic RAG.png"
                       alt="Enterprise RAG System"
                       fill
                       className="object-cover"
@@ -284,9 +284,9 @@ export function EnterpriseFeaturesSection() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="aspect-square relative">
+                   <div className="aspect-[16/10] relative">
                     <Image
-                      src="/images/governance-trust.png"
+                      src="/images/Observability.png"
                       alt="Governance & Trust Dashboard"
                       fill
                       className="object-cover"
