@@ -21,9 +21,9 @@ export function PlatformHeroSection() {
           className="text-center"
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-            Saple Ai
+            
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">
-              Agent Platform
+              Saple AI Platform
             </span>
           </h1>
           

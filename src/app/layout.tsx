@@ -1,13 +1,14 @@
 // C:\saple.ai\SapleNew\src\app\layout.tsx - UPDATED
 import type { Metadata } from 'next';
-import { Space_Grotesk } from 'next/font/google';
+import { Inter } from 'next/font/google'; // Change from Space_Grotesk to Inter
 import './globals.css';
 import { CyberNavbar } from './components/CyberNavbar';
 import { HolographicFooter } from './components/HolographicFooter';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import Script from 'next/script';
 
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
+// Use Inter font (regular sans-serif) instead of Space_Grotesk
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'SAPLE.AI | ENTERPRISE AI SOLUTIONS',
@@ -52,7 +53,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${spaceGrotesk.className} bg-black color`}>
+      <body className={`${inter.className} bg-black color`}>
         {/* Main layout - navbar and footer always visible */}
         <CyberNavbar />
 
