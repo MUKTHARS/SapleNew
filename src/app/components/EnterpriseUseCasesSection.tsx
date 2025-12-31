@@ -7,42 +7,42 @@ import { useState, useEffect, useCallback } from 'react';
 
 export function EnterpriseUseCasesSection() {
   const useCases = [
-    {
-      title: "Customer Support",
-      description: "Automated resolution of customer queries with intelligent escalation to human agents.",
-      icon: <MessageSquare className="w-6 h-6" />,
-      color: "bg-slate-900",
-      stats: ["70% auto-resolution", "90% CSAT"]
-    },
-    {
-      title: "Agent Assist",
-      description: "Real-time guidance and information retrieval for support agents during live interactions.",
-      icon: <Users className="w-6 h-6" />,
-      color: "bg-slate-900",
-      stats: ["50% faster resolution", "40% less training"]
-    },
-    {
-      title: "ITSM Automation",
-      description: "Intelligent ticket routing, incident response, and automated troubleshooting.",
-      icon: <Building className="w-6 h-6" />,
-      color: "bg-slate-900",
-      stats: ["80% auto-routing", "60% MTTR reduction"]
-    },
-    {
-      title: "Finance Operations",
-      description: "Automated invoice processing, compliance checks, and financial report generation.",
-      icon: <TrendingUp className="w-6 h-6" />,
-      color: "bg-slate-900",
-      stats: ["90% accuracy", "75% time saved"]
-    },
-    {
-      title: "Knowledge Automation",
-      description: "Intelligent document processing, knowledge base management, and information retrieval.",
-      icon: <Globe className="w-6 h-6" />,
-      color: "bg-slate-900",
-      stats: ["95% retrieval accuracy", "50k+ documents"]
-    }
-  ];
+  {
+    title: "Customer Support",
+    description: "Automated resolution of customer queries with intelligent escalation to human agents.",
+    icon: <MessageSquare className="w-6 h-6" />,
+    color: "bg-blue-600",
+    stats: ["70% auto-resolution", "90% CSAT"]
+  },
+  {
+    title: "Agent Assist",
+    description: "Real-time guidance and information retrieval for support agents during live interactions.",
+    icon: <Users className="w-6 h-6" />,
+    color: "bg-emerald-600",
+    stats: ["50% faster resolution", "40% less training"]
+  },
+  {
+    title: "ITSM Automation",
+    description: "Intelligent ticket routing, incident response, and automated troubleshooting.",
+    icon: <Building className="w-6 h-6" />,
+    color: "bg-indigo-600",
+    stats: ["80% auto-routing", "60% MTTR reduction"]
+  },
+  {
+    title: "Finance Operations",
+    description: "Automated invoice processing, compliance checks, and financial report generation.",
+    icon: <TrendingUp className="w-6 h-6" />,
+    color: "bg-violet-600",
+    stats: ["90% accuracy", "75% time saved"]
+  },
+  {
+    title: "Knowledge Automation",
+    description: "Intelligent document processing, knowledge base management, and information retrieval.",
+    icon: <Globe className="w-6 h-6" />,
+    color: "bg-cyan-600",
+    stats: ["95% retrieval accuracy", "50k+ documents"]
+  }
+];
 
   const [currentSlide, setCurrentSlide] = useState(0);
 //   const itemsPerView = 1;
@@ -134,7 +134,7 @@ export function EnterpriseUseCasesSection() {
               transition={{ duration: 0.5 }}
               className="group"
             >
-              <div className="bg-white rounded-2xl border border-slate-200 p-8 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+              <div className="bg-black rounded-2xl border border-slate-200 p-8 hover:shadow-lg hover:border-slate-300 transition-all duration-300">
                 <div className="flex flex-col md:flex-row items-start gap-8 mb-8">
                   <div className={`w-16 h-16 rounded-xl ${useCases[currentSlide].color} flex items-center justify-center flex-shrink-0`}>
                     <div className="text-white">
@@ -142,7 +142,7 @@ export function EnterpriseUseCasesSection() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                       {useCases[currentSlide].title}
                     </h3>
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -152,7 +152,7 @@ export function EnterpriseUseCasesSection() {
                         </span>
                       ))}
                     </div>
-                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                    <p className="text-lg text-white leading-relaxed mb-6">
                       {useCases[currentSlide].description}
                     </p>
                   </div>

@@ -9,7 +9,7 @@ import { ArrowRight, Brain, Code, Shield, Database } from 'lucide-react';
 export function EnterpriseFeaturesSection() {
   return (
     <section className="py-32 px-4 bg-white">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         
         {/* Multi-Agent Orchestration */}
         <motion.div
@@ -17,10 +17,10 @@ export function EnterpriseFeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-32"
+          className="mb-40"
         >
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="lg:w-3/5">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center">
                   <Brain className="w-5 h-5 text-slate-700" />
@@ -65,19 +65,19 @@ export function EnterpriseFeaturesSection() {
               </div>
             </div>
             
-            <div className="lg:w-2/5">
+            <div className="lg:w-1/2">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="aspect-[16/10] relative">
+                  <div className="h-[470px] relative">
                     <Image
                       src="/images/Multi-Agent Orchestration.png"
                       alt="Multi-Agent Orchestration"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -99,22 +99,22 @@ export function EnterpriseFeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
-          className="mb-32"
+          className="mb-40"
         >
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="lg:w-2/5 order-2 lg:order-1">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2 order-2 lg:order-1">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="aspect-[16/10] relative">
+                  <div className="h-[470px] relative">
                     <Image
                       src="/images/No Code.png"
                       alt="No-Code Pro-Code Interface"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -133,7 +133,7 @@ export function EnterpriseFeaturesSection() {
               </div>
             </div>
             
-            <div className="lg:w-3/5 order-1 lg:order-2">
+            <div className="lg:w-1/2 order-1 lg:order-2">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center">
@@ -197,10 +197,10 @@ export function EnterpriseFeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mb-32"
+          className="mb-40"
         >
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="lg:w-3/5">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center">
                   <Database className="w-5 h-5 text-slate-700" />
@@ -244,19 +244,19 @@ export function EnterpriseFeaturesSection() {
               </div>
             </div>
             
-            <div className="lg:w-2/5">
+            <div className="lg:w-1/2">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                   <div className="aspect-[16/10] relative">
+                  <div className="h-[470px] relative">
                     <Image
                       src="/images/Agentic RAG.png"
                       alt="Enterprise RAG System"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -279,20 +279,20 @@ export function EnterpriseFeaturesSection() {
           transition={{ duration: 0.7, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="lg:w-2/5 order-2 lg:order-1">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2 order-2 lg:order-1">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                   <div className="aspect-[16/10] relative">
+                  <div className="h-[470px] relative">
                     <Image
                       src="/images/Observability.png"
                       alt="Governance & Trust Dashboard"
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -308,7 +308,7 @@ export function EnterpriseFeaturesSection() {
               </div>
             </div>
             
-            <div className="lg:w-3/5 order-1 lg:order-2">
+            <div className="lg:w-1/2 order-1 lg:order-2">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center">
                   <Shield className="w-5 h-5 text-slate-700" />
