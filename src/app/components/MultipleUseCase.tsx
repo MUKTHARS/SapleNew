@@ -57,14 +57,14 @@ export function MultipleUseCase() {
   };
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    // if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % useCases.length);
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, []);
 
   return (
     <section className="py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
@@ -195,18 +195,7 @@ export function MultipleUseCase() {
   </div>
 </div>
 
-        {/* Auto-play toggle */}
-        <div className="flex justify-center items-center mt-6">
-          <button
-            onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-300"
-          >
-            <div className={`w-8 h-4 rounded-full transition-colors duration-300 ${isAutoPlaying ? 'bg-[#0C7075]' : 'bg-gray-300'}`}>
-              <div className={`w-4 h-4 rounded-full bg-white transform transition-transform duration-300 ${isAutoPlaying ? 'translate-x-4' : 'translate-x-0'} shadow-sm`} />
-            </div>
-            <span className="text-sm">Auto-play</span>
-          </button>
-        </div>
+        
       </div>
     </section>
   );
