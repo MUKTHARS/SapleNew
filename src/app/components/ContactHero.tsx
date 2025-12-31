@@ -75,31 +75,8 @@ export function ContactHero() {
           </motion.div>
 
           {/* Divider */}
-          <div className="mt-16 mb-12">
-            <div className="flex items-center justify-center">
-              <div className="w-20 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-              <div className="mx-4 text-sm text-gray-500">OR</div>
-              <div className="w-20 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-            </div>
-          </div>
+      
 
-          {/* Direct Contact */}
-          <div className="max-w-md mx-auto">
-            <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Prefer to email?</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Send us an email and we&apos;ll get back to you as soon as possible.
-              </p>
-              <a 
-                href="mailto:support@saple.ai" 
-                className="inline-flex items-center gap-2 text-[#0C7075] font-medium hover:text-[#072E33] transition-colors group"
-              >
-                <Mail className="w-4 h-4" />
-                <span>support@saple.ai</span>
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity ml-1">→</span>
-              </a>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
