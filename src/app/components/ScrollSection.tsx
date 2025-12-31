@@ -60,11 +60,13 @@ export function ScrollSection() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState<boolean[]>([]);
 
-  const handleSectionClick = useCallback((index: number) => {
+const handleSectionClick = useCallback((index: number) => {
   if (!scrollContainerRef.current) return;
   
   setIsScrolling(true);
-  setActiveSection(index); 
+  setActiveSection(index);
+  
+  // Force update the scroll position
   const sectionHeight = scrollContainerRef.current.clientHeight;
   const targetScroll = index * sectionHeight;
   
@@ -73,22 +75,27 @@ export function ScrollSection() {
     behavior: 'smooth'
   });
 
-  setTimeout(() => setIsScrolling(false), 500);
+  // Clear scrolling flag after scroll completes
+  const scrollTimeout = setTimeout(() => setIsScrolling(false), 500);
+  
+  return () => clearTimeout(scrollTimeout);
 }, []);
 
-  const handleScroll = useCallback(() => {
-    if (!scrollContainerRef.current || isScrolling) return;
-    
-    const scrollTop = scrollContainerRef.current.scrollTop;
-    const containerHeight = scrollContainerRef.current.clientHeight;
-    
-    const currentSection = Math.floor(scrollTop / containerHeight);
-    const newActiveSection = Math.min(currentSection, scrollSections.length - 1);
-    
-    if (newActiveSection !== activeSection) {
-      setActiveSection(newActiveSection);
-    }
-  }, [isScrolling, activeSection]);
+const handleScroll = useCallback(() => {
+  if (!scrollContainerRef.current || isScrolling) return;
+  
+  const scrollTop = scrollContainerRef.current.scrollTop;
+  const containerHeight = scrollContainerRef.current.clientHeight;
+  
+  // Add a threshold to handle rounding errors
+  const threshold = 10; // pixels buffer
+  const currentSection = Math.round((scrollTop + threshold) / containerHeight);
+  const newActiveSection = Math.min(currentSection, scrollSections.length - 1);
+  
+  if (newActiveSection !== activeSection) {
+    setActiveSection(newActiveSection);
+  }
+}, [isScrolling, activeSection]);
 
   const handleImageLoaded = useCallback((index: number) => {
     setIsImageLoaded(prev => {
@@ -261,8 +268,8 @@ export function ScrollSection() {
             </div>
           </div>
 
-          {/* Right column - Full height image only */}
-         <div className="absolute right-0 top-0 h-full w-full lg:w-3/5">
+{/* Right column - Full height image only */}
+<div className="absolute right-0 top-0 h-full w-full lg:w-3/5">
   <div 
     ref={scrollContainerRef}
     className="h-full overflow-y-auto scroll-smooth snap-y snap-mandatory hide-scrollbar"
@@ -272,6 +279,7 @@ export function ScrollSection() {
       <div
         key={section.id}
         className="h-full snap-start relative flex items-center justify-center p-4"
+        style={{ minHeight: '100%' }} // Ensure each section takes full height
       >
         {/* Image element - clean view only */}
         <motion.div
