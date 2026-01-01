@@ -2,7 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { image } from 'framer-motion/client';
+// import { image } from 'framer-motion/client';
 import { Server, Brain, Smartphone, Clock} from 'lucide-react';
 import Image from 'next/image';
 const features = [
