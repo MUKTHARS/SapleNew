@@ -2,28 +2,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { image } from 'framer-motion/client';
 import { Server, Brain, Smartphone, Clock} from 'lucide-react';
-
+import Image from 'next/image';
 const features = [
   {
     icon: <Server className="w-6 h-6" />,
     title: "Enterprise-ready",
-    description: "Scalable and secure – integrate seamlessly with your ecosystem"
+    description: "Scalable and secure – integrate seamlessly with your ecosystem",
+    image: "/images/enterprice.avif"
   },
   {
     icon: <Brain className="w-6 h-6" />,
     title: "GenAI-empowered",
-    description: "Harness the power of generative AI. Creativity meets control"
+    description: "Harness the power of generative AI. Creativity meets control",
+    image: "/images/gen-ai.avif"
   },
   {
     icon: <Smartphone className="w-6 h-6" />,
     title: "Omnichannel",
-    description: "Consistent, high-quality interactions across all customer touch points"
+    description: "Consistent, high-quality interactions across all customer touch points",
+    image: "/images/omni.avif"
   },
   {
     icon: <Clock className="w-6 h-6" />,
     title: "24/7 service",
-    description: "Always on, always reliable. Support that exceeds customer expectations"
+    description: "Always on, always reliable. Support that exceeds customer expectations",
+    image: "/images/24-7.avif"
   }
 ];
 
@@ -76,46 +81,56 @@ export function FeaturesSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group h-full"
-            >
-              <div className="relative h-full bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-green-400/50 hover:bg-white/10 transition-all duration-300 overflow-hidden">
-                {/* Pattern inside card */}
-                <div className="absolute inset-0 opacity-[0.05]">
-                  <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at center, rgba(255,255,255,0.3) 1px, transparent 1px)`,
-                    backgroundSize: '40px 40px'
-                  }} />
-                </div>
+  key={index}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: index * 0.1 }}
+  viewport={{ once: true }}
+  className="group h-full"
+>
+  <div className="relative h-full bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-green-400/50 hover:bg-white/10 transition-all duration-300 overflow-hidden">
+    {/* Image background */}
+    {feature.image && (
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={feature.image}
+          alt={feature.title}
+          fill
+          className="object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b " />
+      </div>
+    )}
+    
+    {/* Pattern inside card */}
+    <div className="absolute inset-0 opacity-[0.05] z-1">
+      <div className="absolute inset-0" style={{
+        backgroundImage: `radial-gradient(circle at center, rgba(255,255,255,0.3) 1px, transparent 1px)`,
+        backgroundSize: '40px 40px'
+      }} />
+    </div>
 
-               <div className="relative w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 border border-gray-700 group-hover:border-gray-500 shadow-inner">
-  <div className="text-gray-300 group-hover:text-white transition-colors duration-300 relative z-10">
-    {feature.icon}
+    <div className="relative w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 border border-gray-700 group-hover:border-gray-500 shadow-inner z-10">
+      <div className="text-gray-300 group-hover:text-white transition-colors duration-300 relative z-10">
+        {feature.icon}
+      </div>
+      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-white/5 to-transparent" />
+    </div>
+
+    {/* Content */}
+    <div className="relative z-10">
+      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-white transition-colors duration-300">
+        {feature.title}
+      </h3>
+      <p className="text-white/90 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">
+        {feature.description}
+      </p>
+    </div>
+
+    {/* Bottom accent */}
+    <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:via-green-400/60 group-hover:scale-x-110 transition-all duration-300 z-10" />
   </div>
-  {/* Add a subtle inner glow */}
-  <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-white/5 to-transparent" />
-</div>
-
-                {/* Content */}
-                <div className="relative">
-                  {/* <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-green-100 transition-colors duration-300"> */}
-                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-white transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white/90 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">
-                  {/* <p className="text-white/70 text-sm leading-relaxed group-hover:text-white/80 transition-colors duration-300"> */}
-                    {feature.description}
-                  </p>
-                </div>
-
-                {/* Bottom accent */}
-                <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:via-green-400/60 group-hover:scale-x-110 transition-all duration-300" />
-              </div>
-            </motion.div>
+</motion.div>
           ))}
         </div>
       </div>
