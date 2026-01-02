@@ -1,9 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Brain, Sparkles, Shield, Zap } from 'lucide-react';
+import { ArrowRight, Brain, Sparkles, Shield, Zap, PlayCircle } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ProductivityMetricsSection } from './ProductivityMetricsSection';
+import { IntegrationCapabilitiesSection } from './IntegrationCapabilitiesSection';
 
 export default function AgentAssistPage() {
   const features = [
@@ -35,41 +37,61 @@ export default function AgentAssistPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Saple AI Agent Assist
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Empower human agents with an intelligent AI co-pilot that works <span className="font-semibold text-gray-900">in real time</span>
-            </p>
-            
-            <p className="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
-              Saple AI Agent Assist uses advanced generative and agentic AI to <span className="font-medium">guide, accelerate, and elevate</span> every customer interaction. 
-              It understands live conversations, automates behind-the-scenes work, and delivers context-aware guidance—so agents can focus on empathy, judgment, and outcomes.
-            </p>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg"
+      {/* Hero Section - Dark Theme */}
+      <section className="relative pt-28 pb-20 md:pt-32 md:pb-24 lg:pt-36 lg:pb-58 overflow-hidden bg-gradient-to-b from-gray-900 to-black">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0)`,
+            backgroundSize: '48px 48px'
+          }} />
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl mx-auto"
             >
-              <span>Start Free Trial</span>
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </motion.div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Saple AI Agent Assist
+              </h1>
+              
+              <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
+                Empower human agents with an intelligent AI co-pilot that works <span className="font-semibold text-white">in real time</span>
+              </p>
+              
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
+                Saple AI Agent Assist uses advanced generative and agentic AI to <span className="font-medium text-white">guide, accelerate, and elevate</span> every customer interaction. 
+                It understands live conversations, automates behind-the-scenes work, and delivers context-aware guidance—so agents can focus on empathy, judgment, and outcomes.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg"
+                >
+                  <span>Start Free Trial</span>
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
+                
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold border border-white/20 hover:border-white/40 transition-all duration-300"
+                >
+                  <PlayCircle className="w-5 h-5" />
+                  <span>Watch Demo</span>
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Main Content */}
+      {/* Rest of the page remains the same */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Augment Section */}
@@ -81,9 +103,9 @@ export default function AgentAssistPage() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              <section className="text-3xl md:text-4xl font-bold text-gray-900">
                 Augment human agents with intelligent AI assistance
-              </h2>
+              </section>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Provide context-aware guidance, workflow automation, and real-time insights that help agents 
                 resolve issues faster—without compromising quality.
@@ -99,7 +121,7 @@ export default function AgentAssistPage() {
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
-                  src="/images/agent-assist-1.png"
+                  src="/images/bf2.avif"
                   alt="AI Agent Assist Interface"
                   width={600}
                   height={300}
@@ -112,47 +134,83 @@ export default function AgentAssistPage() {
             </motion.div>
           </div>
 
-          {/* Features Grid */}
+          {/* Add Productivity Metrics Section */}
+          <ProductivityMetricsSection />
+
+          {/* Features Section - Updated Layout */}
           <div className="mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+            <section className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
               Smart AI for Human Agents
-            </h2>
+            </section>
             <p className="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
               Provide real-time recommendations, coaching cues, and automated summaries that help agents 
               work smarter, reduce AHT, and boost customer satisfaction.
             </p>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg"
-                >
-                  <Link href={feature.href} className="block">
-                    <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
-                      <feature.icon className="w-7 h-7 text-gray-700" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                    <div className="mt-4 flex items-center gap-2 text-sm font-medium text-gray-700">
-                      <span>Learn more</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Image on Left */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="relative h-[400px] w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-200"
+              >
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src="/images/bf1.avif"
+                    alt="Smart AI for Human Agents"
+                    width={600}
+                    height={300}
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
+              </motion.div>
+              
+              {/* Content on Right */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <section className="text-3xl font-bold text-gray-900">
+                  Real-Time AI Assistance
+                </section>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Provide real-time recommendations, coaching cues, and automated summaries that help agents 
+                  work smarter, reduce AHT, and boost customer satisfaction.
+                </p>
+                <div className="space-y-4">
+                  {features.map((feature, index) => (
+                    <Link 
+                      key={index}
+                      href={feature.href}
+                      className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <feature.icon className="w-6 h-6 text-gray-700" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-gray-900">{feature.title}</div>
+                        <div className="text-sm text-gray-600">{feature.description}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
 
           {/* Benefits Section */}
           <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-              Deliver Value-Added Service
-            </h2>
+            <section className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+              Enhance Customer Experience
+            </section>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
@@ -167,6 +225,10 @@ export default function AgentAssistPage() {
                 {
                   title: 'Increase Agent Utilization',
                   description: 'Enable agents to handle multiple chat interactions simultaneously without compromising context or quality—boosting productivity.'
+                },
+                {
+                  title: 'Deliver Value-Added Service',
+                  description: 'Apply intelligent, policy-driven guidelines aligned with your company’s standards to deliver exceptional service.'
                 }
               ].map((benefit, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
@@ -177,7 +239,9 @@ export default function AgentAssistPage() {
             </div>
           </div>
 
-          {/* Unified Inbox */}
+          {/* Add Integration Capabilities Section */}
+          <IntegrationCapabilitiesSection />
+
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -185,9 +249,9 @@ export default function AgentAssistPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <section className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Unified AI-powered Inbox
-              </h2>
+              </section>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Equip agents to manage and resolve omnichannel conversations with ease. A single interface 
                 that brings together all customer interactions across every channel.
@@ -199,20 +263,24 @@ export default function AgentAssistPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="relative h-[400px] w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-200"
+              className="flex flex-col items-center justify-center"
             >
-              <div className="relative w-full h-full flex items-center justify-center">
-                <Image
-                  src="/images/unified-inbox.png"
-                  alt="Unified AI-powered Inbox"
-                  width={600}
-                  height={300}
-                  className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
+              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-12 border border-gray-200 text-center max-w-md w-full">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Experience the Power
+                </h3>
+                <p className="text-gray-600 mb-8">
+                  See how Saple AI Agent Assist can transform your customer support operations
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-3 bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg w-full justify-center"
+                >
+                  <span>Book a Demo</span>
+                  <ArrowRight className="w-5 h-5" />
+                </motion.button>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
             </motion.div>
           </div>
         </div>
