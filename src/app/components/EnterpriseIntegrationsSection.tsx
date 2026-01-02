@@ -30,7 +30,7 @@ export function EnterpriseIntegrationsSection() {
         >
           {/* Main Heading */}
           <h2 className="text-4xl md:text-5xl  font-bold text-white leading-tight">
-            Enterprise Integrations
+            Saple AI Platform
           </h2>
 
           {/* Description */}

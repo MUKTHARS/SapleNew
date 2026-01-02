@@ -69,23 +69,22 @@ export function EnterpriseFeaturesSection() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="h-[470px] relative">
-                    <Image
-                      src="/images/Multi-Agent Orchestration.png"
-                      alt="Multi-Agent Orchestration"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      priority
-                    />
+                  <div className="h-[470px] bg-blue-50 flex items-center justify-center relative">
+                    <div className="relative w-full h-full max-w-[90%] max-h-[90%]">
+                      <Image
+                        src="/images/Multi-Agent Orchestration.png"
+                        alt="Multi-Agent Orchestration"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
+                      />
+                    </div>
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-sm font-medium text-slate-700">Live Agent Network</span>
                     </div>
-                    <p className="text-slate-600 text-sm">
-                      Real-time coordination across specialized AI agents
-                    </p>
                   </div>
                 </div>
               </div>
@@ -106,15 +105,17 @@ export function EnterpriseFeaturesSection() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="h-[470px] relative">
-                    <Image
-                      src="/images/No Code.png"
-                      alt="No-Code Pro-Code Interface"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      priority
-                    />
+                  <div className="h-[470px] bg-green-50 flex items-center justify-center relative">
+                    <div className="relative w-full h-full max-w-[90%] max-h-[90%]">
+                      <Image
+                        src="/images/No Code.png"
+                        alt="No-Code Pro-Code Interface"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
+                      />
+                    </div>
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -125,9 +126,6 @@ export function EnterpriseFeaturesSection() {
                         <span className="text-sm font-medium text-slate-700">API Access</span>
                       </div>
                     </div>
-                    <p className="text-slate-600 text-sm">
-                      Drag-and-drop interface with full developer control
-                    </p>
                   </div>
                 </div>
               </div>
@@ -248,23 +246,22 @@ export function EnterpriseFeaturesSection() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="h-[470px] relative">
-                    <Image
-                      src="/images/Agentic RAG.png"
-                      alt="Enterprise RAG System"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      priority
-                    />
+                  <div className="h-[470px] bg-purple-50 flex items-center justify-center relative">
+                    <div className="relative w-full h-full max-w-[90%] max-h-[90%]">
+                      <Image
+                        src="/images/Agentic RAG.png"
+                        alt="Enterprise RAG System"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
+                      />
+                    </div>
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-sm font-medium text-slate-700">Intelligent Retrieval</span>
                     </div>
-                    <p className="text-slate-600 text-sm">
-                      Context-aware knowledge retrieval across enterprise systems
-                    </p>
                   </div>
                 </div>
               </div>
@@ -284,15 +281,17 @@ export function EnterpriseFeaturesSection() {
               <div className="relative group">
                 <div className="absolute -inset-4 bg-slate-50/80 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-md">
-                  <div className="h-[470px] relative">
-                    <Image
-                      src="/images/Observability.png"
-                      alt="Governance & Trust Dashboard"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      priority
-                    />
+                  <div className="h-[470px] bg-slate-50 flex items-center justify-center relative">
+                    <div className="relative w-full h-full max-w-[90%] max-h-[90%]">
+                      <Image
+                        src="/images/Observability.png"
+                        alt="Governance & Trust Dashboard"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
+                      />
+                    </div>
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
@@ -300,9 +299,6 @@ export function EnterpriseFeaturesSection() {
                         <span className="text-sm font-medium text-slate-700">Compliance Ready</span>
                       </div>
                     </div>
-                    <p className="text-slate-600 text-sm">
-                      Full audit trails and real-time monitoring
-                    </p>
                   </div>
                 </div>
               </div>
