@@ -5,8 +5,8 @@ import { ArrowRight, Brain, Sparkles, Shield, Zap, PlayCircle } from 'lucide-rea
 import Link from 'next/link';
 import Image from 'next/image';
 import { ProductivityMetricsSection } from './ProductivityMetricsSection';
-import { IntegrationCapabilitiesSection } from './IntegrationCapabilitiesSection';
-
+// import { IntegrationCapabilitiesSection } from './IntegrationCapabilitiesSection';
+import IntegrationsSection from '../../components/integrations-section';
 export default function AgentAssistPage() {
   const features = [
     {
@@ -240,8 +240,8 @@ export default function AgentAssistPage() {
           </div>
 
           {/* Add Integration Capabilities Section */}
-          <IntegrationCapabilitiesSection />
-
+          {/* <IntegrationCapabilitiesSection /> */}
+ <IntegrationsSection />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
