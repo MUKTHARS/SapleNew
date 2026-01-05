@@ -268,7 +268,7 @@ export default function AgentAssistPage() {
           </h3>
         </div>
         <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-          Set intelligent guidelines based on your company's standards to help agents make 
+          Set intelligent guidelines based on your company&apos;s standards to help agents make  
           informed choices to provide great customer experiences.
         </p>
       </div>

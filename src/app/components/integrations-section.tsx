@@ -1,5 +1,6 @@
 import { FaSlack, FaSalesforce, FaShopify, FaHubspot, FaAtlassian } from 'react-icons/fa';
 import { SiZendesk } from 'react-icons/si';
+import Image from 'next/image';
 // import { FaNotion } from 'react-icons/fa6';
 import { FaReact, FaVuejs, FaAngular, FaWordpress, FaHtml5 } from 'react-icons/fa';
 import { SiWix } from 'react-icons/si';
@@ -41,7 +42,7 @@ const integrationIcons = [
   name: 'ServiceNow', 
   icon: () => (
     <div className="h-10 w-10 flex items-center justify-center">
-      <img 
+      <Image
         src="/images/servicenow-icon.svg" 
         alt="ServiceNow" 
         className="h-8 w-8"
@@ -106,13 +107,14 @@ export default function IntegrationsSection() {
             <div className="relative">
               {/* Main Gear */}
             <div className="w-32 h-32 bg-gradient-to-br from-[#0c7075] to-black rounded-full flex items-center justify-center shadow-2xl">
-  <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center p-3">
-    <img 
-      src={"/images/saple-logol.png"} 
-      alt="Saple AI Logo" 
-      className="w-full h-full object-contain"
-    />
-  </div>
+<div className="w-24 h-24 bg-white rounded-full flex items-center justify-center p-3 relative">
+  <Image 
+    src="/images/saple-logol.png" 
+    alt="Saple AI Logo" 
+    fill
+    className="object-contain p-4"
+  />
+</div>
 </div>
               
               {/* Gear teeth */}
