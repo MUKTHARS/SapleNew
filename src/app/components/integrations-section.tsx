@@ -6,6 +6,7 @@ import { SiWix } from 'react-icons/si';
 // Add these import
 import { SiSquarespace  } from 'react-icons/si'; 
 import { SiWebflow } from 'react-icons/si';
+// import { SiServicenow } from 'react-icons/si';
 const integrationIcons = [
   { icon: FaSlack, name: 'Slack' },
   // { icon: FaGithub, name: 'GitHub' },
@@ -36,6 +37,20 @@ const integrationIcons = [
   { icon: SiWix, name: 'Wix' },
   { icon: SiSquarespace, name: 'Squarespace' },
 { icon: SiWebflow, name: 'Webflow' },
+{ 
+  name: 'ServiceNow', 
+  icon: () => (
+    <div className="h-10 w-10 flex items-center justify-center">
+      <img 
+        src="/images/servicenow-icon.svg" 
+        alt="ServiceNow" 
+        className="h-8 w-8"
+        style={{ filter: 'invert(0%) brightness(0%)' }}
+      />
+    </div>
+  ) 
+},
+
 ];
 
 // Filter active icons (remove commented ones)
@@ -185,13 +200,13 @@ export default function IntegrationsSection() {
                 }}
               >
                 <div className="relative group">
-                  {/* Lever/arm connecting to hub */}
+                  {/* Lever/arm connecting to hub
                   <div 
                     className="absolute w-16 h-1 bg-gradient-to-r from-blue-400/50 to-transparent -left-16 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{
                       transform: `rotate(${index % 2 === 0 ? '5deg' : '-5deg'}) translateY(-50%)`,
                     }}
-                  />
+                  /> */}
                   
                   {/* Integration gear/node */}
                   <div className="relative">
@@ -280,7 +295,7 @@ export default function IntegrationsSection() {
                   key={index} 
                   className="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#0c7075] hover:-translate-y-1"
                 >
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-blue-50 to-gray-50">
+                  <div className="p-2 rounded-lg ">
                     <Icon className="h-6 w-6 text-gray-800" />
                   </div>
                   <div>

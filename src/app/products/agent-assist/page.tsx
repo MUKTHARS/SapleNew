@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Brain, Sparkles, Shield, Zap, PlayCircle } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Users, Lightbulb } from 'lucide-react';
 import { ProductivityMetricsSection } from './ProductivityMetricsSection';
 // import { IntegrationCapabilitiesSection } from './IntegrationCapabilitiesSection';
 import IntegrationsSection from '../../components/integrations-section';
@@ -54,7 +55,7 @@ export default function AgentAssistPage() {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl  text-white mb-6 leading-tight">
                 Saple AI Agent Assist
               </h1>
               
@@ -206,38 +207,94 @@ export default function AgentAssistPage() {
             </div>
           </div>
 
-          {/* Benefits Section */}
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 mb-20">
-            <section className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-              Enhance Customer Experience
-            </section>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Improve Decision-making',
-                  description: 'Apply intelligent, policy-driven guidelines aligned with your company standards to help agents make confident, consistent decisions.'
-                },
-                {
-                  title: 'Enhance Customer Experience',
-                  description: 'Deliver personalized, next-best actions by analyzing each interaction alongside customer profile—driving higher satisfaction and loyalty.'
-                },
-                {
-                  title: 'Increase Agent Utilization',
-                  description: 'Enable agents to handle multiple chat interactions simultaneously without compromising context or quality—boosting productivity.'
-                },
-                {
-                  title: 'Deliver Value-Added Service',
-                  description: 'Apply intelligent, policy-driven guidelines aligned with your company’s standards to deliver exceptional service.'
-                }
-              ].map((benefit, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                  <p className="text-gray-700">{benefit.description}</p>
-                </div>
-              ))}
+{/* Benefits Section */}
+<div className="mb-20">
+  <section className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
+    Enhance Customer Experience
+  </section>
+  
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+    {/* Card 1 - ENHANCE CUSTOMER EXPERIENCE */}
+    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+      <div className="flex flex-col h-full">
+        <div className="mb-4">
+          <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-6 h-6 bg-blue-100 rounded-md flex items-center justify-center">
+              <Users className="w-4 h-4 text-gray-900" />
             </div>
           </div>
+          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
+            Enhance Customer Experience
+          </h3>
+        </div>
+        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+          Next-best action tailors service for each customer by analyzing individual interactions 
+          and their unique profile to increase satisfaction, loyalty, and lifetime value.
+        </p>
+      </div>
+    </div>
+
+    {/* Card 2 - OFFER VALUE-ADDED SERVICE */}
+    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+      <div className="flex flex-col h-full">
+        <div className="mb-4">
+          <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-6 h-6 bg-purple-100 rounded-md flex items-center justify-center">
+              <Lightbulb className="w-4 h-4 text-gray-900" />
+            </div>
+          </div>
+          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
+            Offer Value-Added Service
+          </h3>
+        </div>
+        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+          Analyze data from thousands of customer interactions to offer valuable insights based on 
+          customer behavior and preferences using generative AI.
+        </p>
+      </div>
+    </div>
+
+    {/* Card 3 - IMPROVE DECISION MAKING */}
+    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+      <div className="flex flex-col h-full">
+        <div className="mb-4">
+          <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-6 h-6 bg-green-100 rounded-md flex items-center justify-center">
+              <Brain className="w-4 h-4 text-gray-900" />
+            </div>
+          </div>
+          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
+            Improve Decision Making
+          </h3>
+        </div>
+        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+          Set intelligent guidelines based on your company's standards to help agents make 
+          informed choices to provide great customer experiences.
+        </p>
+      </div>
+    </div>
+
+    {/* Card 4 - INCREASE AGENT UTILIZATION */}
+    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+      <div className="flex flex-col h-full">
+        <div className="mb-4">
+          <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-6 h-6 bg-orange-100 rounded-md flex items-center justify-center">
+              <Zap className="w-4 h-4 text-gray-900" />
+            </div>
+          </div>
+          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
+            Increase Agent Utilization
+          </h3>
+        </div>
+        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+          Manage multiple chat inquiries concurrently, while maintaining conversation integrity 
+          and increasing agent performance.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
           {/* Add Integration Capabilities Section */}
           {/* <IntegrationCapabilitiesSection /> */}
