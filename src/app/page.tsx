@@ -71,7 +71,7 @@ export default function Home() {
             i.style.right = "0px";
             i.style.zIndex = "999999";
             i.style.border = "none";
-            i.style.boxShadow = "0 0 20px rgba(14, 165, 233, 0.5)";
+            i.style.boxShadow = "none";
             
             i.width = w >= 600 ? "400" : "350";
             i.height = "600";
