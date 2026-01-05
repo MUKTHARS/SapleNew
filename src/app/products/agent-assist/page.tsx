@@ -122,183 +122,175 @@ export default function AgentAssistPage() {
             >
               <div className="relative w-full h-full flex items-center justify-center">
                 <Image
-                  src="/images/bf2.avif"
+                  src="/images/AI Agent Assist.png"
                   alt="AI Agent Assist Interface"
                   width={600}
-                  height={300}
+                  height={400}
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t " />
             </motion.div>
           </div>
 
           {/* Add Productivity Metrics Section */}
           <ProductivityMetricsSection />
 
-          {/* Features Section - Updated Layout */}
+          {/* Features Section with Background Container */}
+          <div className="mb-20">
+            <div className="relative">
+              {/* Background Container */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 to-gray-50/20 rounded-2xl -m-6" />
+              
+              {/* Content Container with Padding */}
+              <div className="relative p-8 rounded-2xl">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                  {/* Title and Description on Left */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="space-y-6"
+                  >
+                    <section className="text-3xl md:text-4xl font-bold text-gray-900">
+                      Smart AI for Human Agents
+                    </section>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      Provide real-time recommendations, coaching cues, and automated summaries that help agents 
+                      work smarter, reduce AHT, and boost customer satisfaction.
+                    </p>
+                  </motion.div>
+                  
+                  {/* Real-Time AI Assistance Features on Right */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="space-y-6"
+                  >
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      Real-Time AI Assistance
+                    </h3>
+                    <div className="space-y-4">
+                      {features.map((feature, index) => (
+                        <Link 
+                          key={index}
+                          href={feature.href}
+                          className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all duration-300 bg-white"
+                        >
+                          <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <feature.icon className="w-6 h-6 text-gray-700" />
+                          </div>
+                          <div>
+                            <div className="font-bold text-gray-900">{feature.title}</div>
+                            <div className="text-sm text-gray-600">{feature.description}</div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Benefits Section */}
           <div className="mb-20">
             <section className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-              Smart AI for Human Agents
+              Enhance Customer Experience
             </section>
-            <p className="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">
-              Provide real-time recommendations, coaching cues, and automated summaries that help agents 
-              work smarter, reduce AHT, and boost customer satisfaction.
-            </p>
             
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Image on Left */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="relative h-[400px] w-full rounded-xl overflow-hidden bg-gray-50 border border-gray-200"
-              >
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
-                    src="/images/bf1.avif"
-                    alt="Smart AI for Human Agents"
-                    width={600}
-                    height={300}
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent" />
-              </motion.div>
-              
-              {/* Content on Right */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                <section className="text-3xl font-bold text-gray-900">
-                  Real-Time AI Assistance
-                </section>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Provide real-time recommendations, coaching cues, and automated summaries that help agents 
-                  work smarter, reduce AHT, and boost customer satisfaction.
-                </p>
-                <div className="space-y-4">
-                  {features.map((feature, index) => (
-                    <Link 
-                      key={index}
-                      href={feature.href}
-                      className="flex items-center gap-4 p-4 rounded-lg border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all duration-300"
-                    >
-                      <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <feature.icon className="w-6 h-6 text-gray-700" />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+              {/* Card 1 - ENHANCE CUSTOMER EXPERIENCE */}
+              <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                <div className="flex flex-col h-full">
+                  <div className="mb-4">
+                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
+                      <div className="w-6 h-6 bg-blue-100 rounded-md flex items-center justify-center">
+                        <Users className="w-4 h-4 text-gray-900" />
                       </div>
-                      <div>
-                        <div className="font-bold text-gray-900">{feature.title}</div>
-                        <div className="text-sm text-gray-600">{feature.description}</div>
-                      </div>
-                    </Link>
-                  ))}
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
+                      Enhance Customer Experience
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+                    Next-best action tailors service for each customer by analyzing individual interactions 
+                    and their unique profile to increase satisfaction, loyalty, and lifetime value.
+                  </p>
                 </div>
-              </motion.div>
-            </div>
-          </div>
+              </div>
 
-{/* Benefits Section */}
-<div className="mb-20">
-  <section className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">
-    Enhance Customer Experience
-  </section>
-  
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
-    {/* Card 1 - ENHANCE CUSTOMER EXPERIENCE */}
-    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-      <div className="flex flex-col h-full">
-        <div className="mb-4">
-          <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-            <div className="w-6 h-6 bg-blue-100 rounded-md flex items-center justify-center">
-              <Users className="w-4 h-4 text-gray-900" />
-            </div>
-          </div>
-          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
-            Enhance Customer Experience
-          </h3>
-        </div>
-        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-          Next-best action tailors service for each customer by analyzing individual interactions 
-          and their unique profile to increase satisfaction, loyalty, and lifetime value.
-        </p>
-      </div>
-    </div>
+              {/* Card 2 - OFFER VALUE-ADDED SERVICE */}
+              <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                <div className="flex flex-col h-full">
+                  <div className="mb-4">
+                    <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mb-4">
+                      <div className="w-6 h-6 bg-purple-100 rounded-md flex items-center justify-center">
+                        <Lightbulb className="w-4 h-4 text-gray-900" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
+                      Offer Value-Added Service
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+                    Analyze data from thousands of customer interactions to offer valuable insights based on 
+                    customer behavior and preferences using generative AI.
+                  </p>
+                </div>
+              </div>
 
-    {/* Card 2 - OFFER VALUE-ADDED SERVICE */}
-    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-      <div className="flex flex-col h-full">
-        <div className="mb-4">
-          <div className="w-10 h-10 bg-purple-50 rounded-lg flex items-center justify-center mb-4">
-            <div className="w-6 h-6 bg-purple-100 rounded-md flex items-center justify-center">
-              <Lightbulb className="w-4 h-4 text-gray-900" />
-            </div>
-          </div>
-          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
-            Offer Value-Added Service
-          </h3>
-        </div>
-        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-          Analyze data from thousands of customer interactions to offer valuable insights based on 
-          customer behavior and preferences using generative AI.
-        </p>
-      </div>
-    </div>
+              {/* Card 3 - IMPROVE DECISION MAKING */}
+              <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                <div className="flex flex-col h-full">
+                  <div className="mb-4">
+                    <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center mb-4">
+                      <div className="w-6 h-6 bg-green-100 rounded-md flex items-center justify-center">
+                        <Brain className="w-4 h-4 text-gray-900" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
+                      Improve Decision Making
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+                    Set intelligent guidelines based on your company&apos;s standards to help agents make  
+                    informed choices to provide great customer experiences.
+                  </p>
+                </div>
+              </div>
 
-    {/* Card 3 - IMPROVE DECISION MAKING */}
-    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-      <div className="flex flex-col h-full">
-        <div className="mb-4">
-          <div className="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center mb-4">
-            <div className="w-6 h-6 bg-green-100 rounded-md flex items-center justify-center">
-              <Brain className="w-4 h-4 text-gray-900" />
+              {/* Card 4 - INCREASE AGENT UTILIZATION */}
+              <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+                <div className="flex flex-col h-full">
+                  <div className="mb-4">
+                    <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
+                      <div className="w-6 h-6 bg-orange-100 rounded-md flex items-center justify-center">
+                        <Zap className="w-4 h-4 text-gray-900" />
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
+                      Increase Agent Utilization
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+                    Manage multiple chat inquiries concurrently, while maintaining conversation integrity 
+                    and increasing agent performance.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
-            Improve Decision Making
-          </h3>
-        </div>
-        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-          Set intelligent guidelines based on your company&apos;s standards to help agents make  
-          informed choices to provide great customer experiences.
-        </p>
-      </div>
-    </div>
-
-    {/* Card 4 - INCREASE AGENT UTILIZATION */}
-    <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-      <div className="flex flex-col h-full">
-        <div className="mb-4">
-          <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center mb-4">
-            <div className="w-6 h-6 bg-orange-100 rounded-md flex items-center justify-center">
-              <Zap className="w-4 h-4 text-gray-900" />
-            </div>
-          </div>
-          <h3 className="text-lg font-bold text-gray-900 leading-tight mb-3">
-            Increase Agent Utilization
-          </h3>
-        </div>
-        <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-          Manage multiple chat inquiries concurrently, while maintaining conversation integrity 
-          and increasing agent performance.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 
           {/* Add Integration Capabilities Section */}
           {/* <IntegrationCapabilitiesSection /> */}
- <IntegrationsSection />
+          <IntegrationsSection />
+          
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
