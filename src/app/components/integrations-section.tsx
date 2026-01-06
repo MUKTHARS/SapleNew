@@ -2,7 +2,7 @@ import { FaSlack, FaSalesforce, FaShopify, FaHubspot, FaAtlassian } from 'react-
 import { SiZendesk } from 'react-icons/si';
 import Image from 'next/image';
 // import { FaNotion } from 'react-icons/fa6';
-import { FaReact, FaVuejs, FaAngular, FaWordpress, FaHtml5 } from 'react-icons/fa';
+import { FaVuejs, FaAngular, FaWordpress, FaHtml5 } from 'react-icons/fa';
 import { SiWix } from 'react-icons/si';
 // Add these import
 import { SiSquarespace  } from 'react-icons/si'; 
