@@ -150,7 +150,7 @@ export default function Home() {
         <CtaSection />
       </ErrorBoundary>
       
-      <script
+      {/* <script
         dangerouslySetInnerHTML={{
           __html: `
             if (typeof window !== 'undefined') {
@@ -166,7 +166,7 @@ export default function Home() {
             }
           `,
         }}
-      />
+      /> */}
     </div>
   );
 }
