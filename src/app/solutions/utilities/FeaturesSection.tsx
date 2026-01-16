@@ -1,7 +1,7 @@
 // C:\saple.ai\SapleNew\src\app\products\utilities\FeaturesSection.tsx
 'use client';
 
-import { CheckCircle, Zap, Shield, Clock, Users, Calendar, CreditCard, Bell, MapPin, BarChart, TrendingUp } from 'lucide-react';
+import { CheckCircle, Zap, Users, Calendar, CreditCard, Bell} from 'lucide-react';
 import Image from 'next/image';
 
 export function FeaturesSection() {

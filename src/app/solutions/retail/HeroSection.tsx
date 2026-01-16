@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Zap, ShoppingBag, Users, TrendingUp, Clock } from 'lucide-react';
+import { Zap, ShoppingBag, Users, TrendingUp } from 'lucide-react';
 
 export function HeroSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);

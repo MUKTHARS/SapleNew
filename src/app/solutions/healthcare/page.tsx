@@ -1,7 +1,7 @@
 // C:\saple.ai\SapleNew\src\app\products\healthcare\page.tsx
 import { HeroSection } from './HeroSection';
 import { FeaturesSection } from './FeaturesSection';
-import { SuccessStorySection } from './SuccessStorySection';
+// import { SuccessStorySection } from './SuccessStorySection';
 import { CTASection } from './CTASection';
 
 export default function HealthcarePage() {

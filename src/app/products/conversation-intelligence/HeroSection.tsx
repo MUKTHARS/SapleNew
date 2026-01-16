@@ -2,7 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, PlayCircle } from 'lucide-react';
+// import { ArrowRight, PlayCircle } from 'lucide-react';
 
 export function HeroSection() {
   return (
