@@ -51,78 +51,78 @@ export default function Home() {
     checkAuth();
   }, [router]);
 
-  useEffect(() => {
-    if (!isChecking) {
-      const injectChatbotScript = () => {
-        if (document.getElementById('saple-ai-chatbot-script')) {
-          return;
-        }
+  // useEffect(() => {
+  //   if (!isChecking) {
+  //     const injectChatbotScript = () => {
+  //       if (document.getElementById('saple-ai-chatbot-script')) {
+  //         return;
+  //       }
 
-        const script = document.createElement('script');
-        script.id = 'saple-ai-chatbot-script';
-        script.innerHTML = `
-          (function() {
-            console.log('SAPLE.AI Chatbot script loading...');
-            var w = window.innerWidth;
-            var i = document.createElement("iframe");
-            i.src = "https://bot.saple.ai/aeb57465-c9e0-4ce8-8d22-f1d45f85cec6/dbb329eb-b483-4285-a9ea-c033b8bd2fd1";
-            i.style.position = "fixed";
-            i.style.bottom = "0px";
-            i.style.right = "0px";
-            i.style.zIndex = "999999";
-            i.style.border = "none";
-            i.style.boxShadow = "none";
+  //       const script = document.createElement('script');
+  //       script.id = 'saple-ai-chatbot-script';
+  //       script.innerHTML = `
+  //         (function() {
+  //           console.log('SAPLE.AI Chatbot script loading...');
+  //           var w = window.innerWidth;
+  //           var i = document.createElement("iframe");
+  //           i.src = "https://bot.saple.ai/aeb57465-c9e0-4ce8-8d22-f1d45f85cec6/dbb329eb-b483-4285-a9ea-c033b8bd2fd1";
+  //           i.style.position = "fixed";
+  //           i.style.bottom = "0px";
+  //           i.style.right = "0px";
+  //           i.style.zIndex = "999999";
+  //           i.style.border = "none";
+  //           i.style.boxShadow = "none";
             
-            i.width = w >= 600 ? "400" : "350";
-            i.height = "600";
+  //           i.width = w >= 600 ? "400" : "350";
+  //           i.height = "600";
             
-            function appendIframe() {
-              if (document.body) {
-                document.body.appendChild(i);
-                console.log('SAPLE.AI Chatbot iframe added to page');
+  //           function appendIframe() {
+  //             if (document.body) {
+  //               document.body.appendChild(i);
+  //               console.log('SAPLE.AI Chatbot iframe added to page');
                 
-                window.addEventListener("message", function(e) {
-                  if (e.data && e.data.width && e.data.height) {
-                    i.width = w >= 600 ? e.data.width : '400px';
-                    i.height = e.data.height;
-                    console.log('Chatbot resized to:', i.width, 'x', i.height);
-                  }
-                });
+  //               window.addEventListener("message", function(e) {
+  //                 if (e.data && e.data.width && e.data.height) {
+  //                   i.width = w >= 600 ? e.data.width : '400px';
+  //                   i.height = e.data.height;
+  //                   console.log('Chatbot resized to:', i.width, 'x', i.height);
+  //                 }
+  //               });
                 
-                return true;
-              }
-              return false;
-            }
+  //               return true;
+  //             }
+  //             return false;
+  //           }
             
-            if (!appendIframe()) {
-              const interval = setInterval(() => {
-                if (appendIframe()) {
-                  clearInterval(interval);
-                }
-              }, 100);
+  //           if (!appendIframe()) {
+  //             const interval = setInterval(() => {
+  //               if (appendIframe()) {
+  //                 clearInterval(interval);
+  //               }
+  //             }, 100);
               
-              setTimeout(() => clearInterval(interval), 5000);
-            }
-          })();
-        `;
+  //             setTimeout(() => clearInterval(interval), 5000);
+  //           }
+  //         })();
+  //       `;
         
-        document.body.appendChild(script);
+  //       document.body.appendChild(script);
         
-        return () => {
-          if (document.body.contains(script)) {
-            document.body.removeChild(script);
-          }
-          const iframe = document.querySelector('iframe[src*="bot.saple.ai"]');
-          if (iframe && document.body.contains(iframe)) {
-            document.body.removeChild(iframe);
-          }
-        };
-      };
+  //       return () => {
+  //         if (document.body.contains(script)) {
+  //           document.body.removeChild(script);
+  //         }
+  //         const iframe = document.querySelector('iframe[src*="bot.saple.ai"]');
+  //         if (iframe && document.body.contains(iframe)) {
+  //           document.body.removeChild(iframe);
+  //         }
+  //       };
+  //     };
 
-      const cleanup = injectChatbotScript();
-      return cleanup;
-    }
-  }, [isChecking]);
+  //     const cleanup = injectChatbotScript();
+  //     return cleanup;
+  //   }
+  // }, [isChecking]);
 
   if (isChecking) {
     return (
